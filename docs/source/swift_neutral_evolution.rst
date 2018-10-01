@@ -71,7 +71,7 @@ For additional quantities of interest, the simulated values are compared to the 
 The inputs with high uncertainty which may need calibration include: roughness length, surface heat flux, atmospheric boundary layer height. The quantities of interest that will be considered can be found in :ref:`validation`. Participants are asked to submit the simulation setup information as well as the simulation results listed below.
 
 - Simulation setup:
-    - Upload a single file named ``<participant_id>_<submission_date_YYMMDD>_simulation_setup.txt`` with three columns: parameter description, parameter value, parameter unit. Comments should be preceded by #. As many comment lines as necessary can be added, but no header is necessary. Number of rows is the number of parameters provided. A template can be seen in ... Requested parameters are:
+    - Upload a single file named ``<participant_id>_<submission_date_YYMMDD>_simulation_setup.txt`` with three columns: parameter description, parameter value, parameter unit. Comments should be preceded by #. As many comment lines as necessary can be added, but no header is necessary. Number of rows is the number of parameters provided. A template can be seen `here <../../../file_templates/template_181001_simulation_setup.txt>`_. Requested parameters are:    
         - Mesh grid spacing in the three spatial dimensions (:math:`\Delta x, \Delta y, \Delta z`)
         - Temporal resolution of the output (:math:`\Delta t`)
         - Number of points in each of the four dimensions (:math:`n_x, n_y, n_z, n_t`)
@@ -115,7 +115,7 @@ In Phases 2 and 3 of the benchmark, the downstream evolution of the wind-turbine
 In both parts of this phase, participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis. Participants are asked to submit the simulation setup information as well as the simulation results listed below.
 
 - Simulation setup:
-    - Upload a single file named ``<participant_id>_<submission_date_YYMMDD>_simulation_setup.txt`` with three columns: parameter description, parameter value, parameter unit. Number of rows is the number of parameters provided. Requested parameters are:
+    - Upload a single file named ``<participant_id>_<submission_date_YYMMDD>_simulation_setup.txt`` with three columns: parameter description, parameter value, parameter unit. As many comment lines as necessary can be added, but no header is necessary. Number of rows is the number of parameters provided. A template can be seen `here <../../../file_templates/template_181001_simulation_setup.txt>`_. Requested parameters are:  
         - Mesh grid spacing in the three spatial dimensions (:math:`\Delta x, \Delta y, \Delta z`)
         - Temporal resolution of the output (:math:`\Delta t`)
         - Number of points in each of the four dimensions (:math:`n_x, n_y, n_z, n_t`)
