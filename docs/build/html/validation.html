@@ -54,16 +54,30 @@
 <h2>Wake Quantities of Interest<a class="headerlink" href="#wake-quantities-of-interest" title="Permalink to this headline">¶</a></h2>
 <p>The uploaded results will be processed by the benchmark organizers to diagnose quantities of interest with the publicly released notebooks (available in this repository) and the <a class="reference external" href="https://github.com/ewquon/waketracking">SAMWICh toolbox</a>. For the evolution benchmarks (<a class="reference internal" href="swift_neutral_evolution.html#swift-neutral-evolution"><span class="std std-ref">Neutral</span></a> and <a class="reference internal" href="swift_stable_evolution.html#swift-stable-evolution"><span class="std std-ref">Stable</span></a>), the wake characterization quantities of interest are the following:</p>
 <ul class="simple">
-<li>Horizontal profile at <span class="math notranslate nohighlight">\(z=z_{hub}\)</span> of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)</li>
-<li>Vertical profile at <span class="math notranslate nohighlight">\(y=y_{hub}\)</span> of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)</li>
-<li>Mean wake shape at each requested distance downstream</li>
-<li>Mean wake length scale at each requested distance downstream</li>
-<li>Spatial median of velocity deficit within the wake bounds at each requested distance downstream</li>
+<li><dl class="first docutils">
+<dt>Horizontal profile of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream</dt>
+<dd><ul class="first last">
+<li>at <span class="math notranslate nohighlight">\(z=z_{hub}\)</span> for the fixed frame-of-reference</li>
+<li>at <span class="math notranslate nohighlight">\(z=z_{wake\_center}\)</span> for the meandering frame-of-reference</li>
 </ul>
-<p>For the wake dynamics benchmark (<a class="reference internal" href="swift_unstable_dynamics.html#swift-unstable-dynamics"><span class="std std-ref">Unstable</span></a>), one additional quantity of interest is:</p>
-<ul class="simple">
-<li>Temporal standard deviation of wake center position in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span></li>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Vertical profile of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream</dt>
+<dd><ul class="first last">
+<li>at <span class="math notranslate nohighlight">\(y=y_{hub}\)</span> for the fixed frame-of-reference</li>
+<li>at <span class="math notranslate nohighlight">\(y=y_{wake\_center}\)</span> for the meandering frame-of-reference (in a meandering frame-of-reference and a fixed frame-of-reference)</li>
 </ul>
+</dd>
+</dl>
+</li>
+<li>Shape of mean wake at each requested distance downstream (qualitative comparison)</li>
+<li>Length scale of mean wake at each requested distance downstream, estimated as the spread parameters (in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>) of the 2-dimensional Gaussian fit to the velocity-deficit field</li>
+<li>Median value of velocity deficit considering all points within the mean-wake bounds, computed at each requested distance downstream</li>
+<li>Histogram of time series of wake center position in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span></li>
+</ul>
+<p>Note that all of the above quantities will be diagnosed by the benchmark organizers from the time series of flow fields uploaded by the participants.</p>
 </div>
 <div class="section" id="validation-metrics">
 <h2>Validation Metrics<a class="headerlink" href="#validation-metrics" title="Permalink to this headline">¶</a></h2>
@@ -83,6 +97,18 @@
 <p>Here, the simulation results are compared to the measurements. The visual comparison described above is supplemented by error metrics (e.g., mean error, root-mean-square error).</p>
 <p><strong>Phase 3: Iteration</strong></p>
 <p>Participants are encouraged to iterate on their results and re-submit them for a comparison to the measurements. In this phase, the visual comparison and error-metric comparison are also performed and the improvement in error metrics is tracked relative to prior submissions of model results by the same participant.</p>
+</div>
+<div class="section" id="coordinate-system">
+<h2>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h2>
+<p>Unless otherwise noted, all data are analyzed in a coordinate system where <span class="math notranslate nohighlight">\(x\)</span> is aligned with the mean wind direction as shown in the schematic.</p>
+<div class="figure">
+<img alt="_images/coordinate_system_noyaw.png" src="_images/coordinate_system_noyaw.png" />
+</div>
+<p><em>Figure: Coordinate system to be used in the validation analyses, when turbine is facing the mean wind.</em></p>
+<div class="figure">
+<img alt="_images/coordinate_system_yawed.png" src="_images/coordinate_system_yawed.png" />
+</div>
+<p><em>Figure: Coordinate system to be used in the validation analyses, when turbine is misaligned with a positive yaw.</em></p>
 </div>
 </div>
 
@@ -112,6 +138,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#atmospheric-inflow-quantities-of-interest">Atmospheric Inflow Quantities of Interest</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wake-quantities-of-interest">Wake Quantities of Interest</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#validation-metrics">Validation Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coordinate-system">Coordinate System</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>

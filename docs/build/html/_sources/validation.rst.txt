@@ -24,15 +24,18 @@ Wake Quantities of Interest
 
 The uploaded results will be processed by the benchmark organizers to diagnose quantities of interest with the publicly released notebooks (available in this repository) and the `SAMWICh toolbox <https://github.com/ewquon/waketracking>`_. For the evolution benchmarks (:ref:`Neutral <swift_neutral_evolution>` and :ref:`Stable <swift_stable_evolution>`), the wake characterization quantities of interest are the following:
 
-- Horizontal profile at :math:`z=z_{hub}` of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)
-- Vertical profile at :math:`y=y_{hub}` of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)
-- Mean wake shape at each requested distance downstream 
-- Mean wake length scale at each requested distance downstream
-- Spatial median of velocity deficit within the wake bounds at each requested distance downstream
+- Horizontal profile of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream 
+	- at :math:`z=z_{hub}` for the fixed frame-of-reference
+	- at :math:`z=z_{wake\_center}` for the meandering frame-of-reference 
+- Vertical profile of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream
+	- at :math:`y=y_{hub}` for the fixed frame-of-reference
+	- at :math:`y=y_{wake\_center}` for the meandering frame-of-reference (in a meandering frame-of-reference and a fixed frame-of-reference)
+- Shape of mean wake at each requested distance downstream (qualitative comparison)
+- Length scale of mean wake at each requested distance downstream, estimated as the spread parameters (in :math:`y` and :math:`z`) of the 2-dimensional Gaussian fit to the velocity-deficit field
+- Median value of velocity deficit considering all points within the mean-wake bounds, computed at each requested distance downstream
+- Histogram of time series of wake center position in :math:`y` and :math:`z`
 
-For the wake dynamics benchmark (:ref:`Unstable <swift_unstable_dynamics>`), one additional quantity of interest is:
-
-- Temporal standard deviation of wake center position in :math:`y` and :math:`z`
+Note that all of the above quantities will be diagnosed by the benchmark organizers from the time series of flow fields uploaded by the participants.
 
 Validation Metrics
 ------------------
@@ -61,4 +64,16 @@ Here, the simulation results are compared to the measurements. The visual compar
 
 Participants are encouraged to iterate on their results and re-submit them for a comparison to the measurements. In this phase, the visual comparison and error-metric comparison are also performed and the improvement in error metrics is tracked relative to prior submissions of model results by the same participant.
 
+Coordinate System
+-----------------
+
+Unless otherwise noted, all data are analyzed in a coordinate system where :math:`x` is aligned with the mean wind direction as shown in the schematic.
+
+.. figure:: ../../images/coordinate_system_noyaw.png
+
+*Figure: Coordinate system to be used in the validation analyses, when turbine is facing the mean wind.*
+
+.. figure:: ../../images/coordinate_system_yawed.png
+
+*Figure: Coordinate system to be used in the validation analyses, when turbine is misaligned with a positive yaw.*
 

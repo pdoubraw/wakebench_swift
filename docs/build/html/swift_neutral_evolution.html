@@ -117,7 +117,7 @@
 <p>Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.</p>
 </div>
 <div class="section" id="phase-1-code-calibration">
-<h2>Phase 1: Code Calibration<a class="headerlink" href="#phase-1-code-calibration" title="Permalink to this headline">¶</a></h2>
+<span id="phase1"></span><h2>Phase 1: Code Calibration<a class="headerlink" href="#phase-1-code-calibration" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><em>The objective of this phase is to provide an opportunity for model calibration before the blind comparison.</em></div></blockquote>
 <p>In Phase 1 of the benchmark, the wind-turbine wake is not yet considered. Instead, the atmospheric inflow and turbine response are considered. Participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis.</p>
@@ -132,7 +132,15 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Simulation setup:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_simulation_setup.txt</span></code> with three columns: parameter description, parameter value, parameter unit. Comments should be preceded by #. As many comment lines as necessary can be added, but no header is necessary. Number of rows is the number of parameters provided. A template can be seen <a class="reference external" href="../../../file_templates/template_181001_simulation_setup.txt">here</a>. Requested parameters are:</dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YMMDD&gt;_simulation_setup.txt</span></code></dt>
+<dd><ul class="first last">
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181001_simulation_setup.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>File shall have three columns: parameter description, parameter value, parameter unit</li>
+<li>Comments should be preceded by #. As many comment lines as necessary can be added.</li>
+<li>No header is necessary. Number of rows is the number of parameters provided.</li>
+<li><dl class="first docutils">
+<dt>Requested parameters are:</dt>
 <dd><ul class="first last">
 <li>Mesh grid spacing in the three spatial dimensions (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)</li>
 <li>Temporal resolution of the output (<span class="math notranslate nohighlight">\(\Delta t\)</span>)</li>
@@ -146,37 +154,23 @@ For additional quantities of interest, the simulated values are compared to the 
 </dd>
 </dl>
 </li>
+<li>Mesh information does not require its own file; it is contained within the wind flow files.</li>
+</ul>
+</dd>
+</dl>
+</li>
 <li><dl class="first docutils">
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=18.5~\mathrm{m})\)</span></dt>
+<dt>Upload files named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D_&lt;t&gt;.vtk</span></code></dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_bot.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=32.0~\mathrm{m})\)</span></dt>
-<dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_hub.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=45.0~\mathrm{m})\)</span></dt>
-<dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_top.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Temporally-averaged vertical profile of <span class="math notranslate nohighlight">\(U at :math:`(x=-65,y=0)\)</span></dt>
-<dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_U_vertical_profile.txt</span></code> with two columns (<span class="math notranslate nohighlight">\(z,U\)</span>) and <span class="math notranslate nohighlight">\(n_z\)</span> rows.</li>
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181001_uvw_-2.5D_0.vtk" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> is the downstream distance <span class="math notranslate nohighlight">\(x\)</span> normalized by the rotor diameter <span class="math notranslate nohighlight">\(D\)</span></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;t&gt;</span></code> is the time of the flow field in the file, in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)</li>
+<li>File should contain <span class="math notranslate nohighlight">\(u,v,w\)</span> values on a 2-dimensional plane (along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>) at a fixed time and downstream distance (<span class="math notranslate nohighlight">\(x=-65~\mathrm{m}\sim-2.5\mathrm{D}\)</span>)</li>
+<li>A total of <span class="math notranslate nohighlight">\(n_t\)</span> files should be uploaded</li>
 </ul>
 </dd>
 </dl>
@@ -188,22 +182,35 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_inflow_steady_state.txt</span></code> with three columns: variable name, variable value, variable unit. The requested variables are the <a class="reference internal" href="validation.html#validation"><span class="std std-ref">atmospheric inflow quantities of interest</span></a>.</li>
+<li><dl class="first docutils">
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.txt</span></code></dt>
+<dd><ul class="first last">
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181001_uvw_-2.5D_0.vtk" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> is the downstream distance <span class="math notranslate nohighlight">\(x\)</span> normalized by the rotor diameter <span class="math notranslate nohighlight">\(D\)</span></li>
+<li>File should contain <span class="math notranslate nohighlight">\(u,v,w\)</span> values on a 2-dimensional plane (along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>) at a fixed time and downstream distance (<span class="math notranslate nohighlight">\(x=-65~\mathrm{m}\sim-2.5\mathrm{D}\)</span>)</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
 <p><strong>Wind Turbine Response</strong></p>
-<p>Once the atmospheric inflow is verified to match the conditions specified within the benchmark (within an acceptable range, determined by the upper and lower bounds of the ensemble mean of each quantity considered), the turbine response is compared to measured values. Participants are asked to submit the following results:</p>
+<p>Once the atmospheric inflow is verified to match the conditions specified within the benchmark (within an acceptable range, determined by the upper and lower bounds of the ensemble mean of each quantity considered), the turbine response is compared to measured values.</p>
+<p>The inputs with high uncertainty which may need calibration include: A, B, C. Participants are asked to submit the following results:</p>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Time series of power, torque, pitch, and blade-root flapwise bending moment</dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_wtg_response.txt</span></code></dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_wtg_response.txt</span></code> with three columns (<span class="math notranslate nohighlight">\(t,P,M_y\)</span>) and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>File shall have one column per variable (including time) and <span class="math notranslate nohighlight">\(n_t\)</span> rows</li>
+<li>Requested variables are time series of power, torque, pitch, and blade-root flapwise bending moment</li>
 </ul>
 </dd>
 </dl>
@@ -215,7 +222,16 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_wtg_response_steady_state.txt</span></code> with three columns: variable name, variable value, variable unit. The requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them.</li>
+<li><dl class="first docutils">
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_wtg_response_steady_state.txt</span></code></dt>
+<dd><ul class="first last">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>File shall have three columns: variable name, variable value, variable unit</li>
+<li>Requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
@@ -236,18 +252,7 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Simulation setup:</dt>
 <dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_simulation_setup.txt</span></code> with three columns: parameter description, parameter value, parameter unit. As many comment lines as necessary can be added, but no header is necessary. Number of rows is the number of parameters provided. A template can be seen <a class="reference download internal" href="_downloads/template_181001_simulation_setup.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>. Requested parameters are:</dt>
-<dd><ul class="first last">
-<li>Mesh grid spacing in the three spatial dimensions (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)</li>
-<li>Temporal resolution of the output (<span class="math notranslate nohighlight">\(\Delta t\)</span>)</li>
-<li>Number of points in each of the four dimensions (<span class="math notranslate nohighlight">\(n_x, n_y, n_z, n_t\)</span>)</li>
-<li>Any constants used to initialize the model (e.g., roughness length, inversion height and strength, surface heat flux…)</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>Mesh information does not require its own file. It is contained within the wind flow files.</li>
+<li>Same format as in Phase 1</li>
 </ul>
 </dd>
 </dl>
@@ -255,17 +260,8 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> on two-dimensional planes parallel to the rotor at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, and between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments.</dt>
-<dd><ul class="first last">
-<li>Upload nine files, one for each <span class="math notranslate nohighlight">\(x\)</span> distance requested</li>
-<li>Each file should be named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_&lt;x&gt;D.&lt;format&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> can be -2.5, 1, 2, 3, 4, 5, 6, 7, 8</li>
-<li>Each file will contain a 4-dimensional data set, with the following dimensions: <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, and velocity component. The size of the data array will be <span class="math notranslate nohighlight">\(n_t \times n_y \times n_z \times 3\)</span>.</li>
-<li>Accepted file formats are <code class="docutils literal notranslate"><span class="pre">TBD</span></code></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li>Same format as in Phase 1, but now uploaded not only at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, but also between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments</li>
+<li>The number of uploaded files will be <span class="math notranslate nohighlight">\(9\times n_t\)</span> (one per downstream distance and per time)</li>
 </ul>
 </dd>
 </dl>
@@ -273,17 +269,8 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Mean of <span class="math notranslate nohighlight">\(u, v, w\)</span> on two-dimensional planes parallel to the rotor at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, and between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments.</dt>
-<dd><ul class="first last">
-<li>Upload nine files, one for each <span class="math notranslate nohighlight">\(x\)</span> distance requested</li>
-<li>Each file should be named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.&lt;format&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> can be -2.5, 1, 2, 3, 4, 5, 6, 7, 8</li>
-<li>Each file will contain a 3-dimensional data set, with the following dimensions: <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, and velocity component. The size of the data array will be <span class="math notranslate nohighlight">\(n_y \times n_z \times 3\)</span>.</li>
-<li>Accepted file formats are <code class="docutils literal notranslate"><span class="pre">TBD</span></code></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li>Same format as in Phase 1, but now uploaded not only at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, but also between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments</li>
+<li>The number of uploaded files will be <span class="math notranslate nohighlight">\(9\)</span>, one for each <span class="math notranslate nohighlight">\(x\)</span> distance requested</li>
 </ul>
 </dd>
 </dl>
@@ -299,7 +286,16 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Description of updates to the simulation</dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_updates.txt</span></code> which clearly identifies what was changed from the previous submission to the current, and why the changes were made.</li>
+<li><dl class="first docutils">
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_updates.txt</span></code></dt>
+<dd><ul class="first last">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>File contents clearly identify what was changed from the previous submission to the current, and why the changes were made</li>
+<li>File can be freely formatted by participants</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
