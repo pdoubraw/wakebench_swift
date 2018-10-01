@@ -13,10 +13,10 @@ Inflow conditions are obtained from a meteorological tower located upstream of t
 - Cup anemometers at 18 m, 31.5 m, and 45 m above the ground
 - Wind vane at 29.5 m above the ground
 - Two barometric pressure sensors at 2 m and 27.5 m above the ground
-- Two relative humidity sensors at 2 m, 27.5 m, and 56.5 m above the ground
-- Two air temperature sensors at 2 m, 27.5 m, and 56.5 m above the ground
+- Three relative humidity sensors at 2 m, 27.5 m, and 56.5 m above the ground
+- Three air temperature sensors at 2 m, 27.5 m, and 56.5 m above the ground
 
-Several quantities are diagnosed from these measurements. These quantities are computed for each individual 10-minute period. The values provided in each benchmark as inflow conditions are ensemble averages that consider all of the 10-minute periods used to define the benchmark. Some relevant remarks about 
+Several quantities are diagnosed from these measurements. These quantities are computed for each individual 10-minute period. The values provided in each benchmark as inflow conditions are ensemble averages that consider all of the 10-minute periods used to define the benchmark. 
 
 Wind Turbine Measurements
 -------------------------
@@ -26,6 +26,8 @@ The turbine operation data used to define the benchmarks are collected with the 
 - Yaw heading sensor
 - Turbine power and torque sensor
 - Blade-pitch sensor
+- Loads measurements
+    - Blade-root out-of-plane bending moment
 
 Wake Measurements
 -----------------

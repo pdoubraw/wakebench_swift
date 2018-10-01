@@ -16,7 +16,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
     <link rel="prev" title="Model Validation Methodology" href="validation.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -96,7 +96,7 @@
 <td>deg</td>
 </tr>
 <tr class="row-even"><td><span class="math notranslate nohighlight">\(TI\)</span></td>
-<td>Turbulence intensity computed over a 10-min period</td>
+<td>Turbulence intensity computed over a 10-min period from horizontal wind speed</td>
 <td>%</td>
 </tr>
 <tr class="row-odd"><td><span class="math notranslate nohighlight">\(\alpha\)</span></td>
@@ -127,39 +127,43 @@
 <td>Roughness length</td>
 <td>m</td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(\overline{q}\)</span></td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(z_i\)</span></td>
+<td>Atmospheric boundary layer height</td>
+<td>m</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\overline{q}\)</span></td>
 <td>Temporal average of variable <span class="math notranslate nohighlight">\(q\)</span></td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle q \rangle\)</span></td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle q \rangle\)</span></td>
 <td>Ensemble average of variable <span class="math notranslate nohighlight">\(q\)</span></td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(q'\)</span></td>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(q'\)</span></td>
 <td>Temporal perturbation of variable <span class="math notranslate nohighlight">\(q\)</span>, defined as <span class="math notranslate nohighlight">\(q-\overline{q}\)</span></td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(q_{hub}\)</span></td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(q_{hub}\)</span></td>
 <td>Variable <span class="math notranslate nohighlight">\(q\)</span> evaluated at hub height</td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(\sigma_q\)</span></td>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\sigma_q\)</span></td>
 <td>Standard deviation of some quantity <span class="math notranslate nohighlight">\(q\)</span> (over time, space, or an ensemble)</td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(q_{rotor}\)</span></td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(q_{rotor}\)</span></td>
 <td>Variable <span class="math notranslate nohighlight">\(q\)</span> evaluated across the rotor in the vertical direction</td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(q_{wake}\)</span></td>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(q_{wake}\)</span></td>
 <td>Variable <span class="math notranslate nohighlight">\(q\)</span> evaluated in the wake</td>
 <td>unit of <span class="math notranslate nohighlight">\(q\)</span></td>
 </tr>
-<tr class="row-odd"><td><span class="math notranslate nohighlight">\(P\)</span></td>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(P\)</span></td>
 <td>Generator power</td>
 <td>kW</td>
 </tr>
-<tr class="row-even"><td><span class="math notranslate nohighlight">\(M_x\)</span></td>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(M_y\)</span></td>
 <td>Out-of-plane (flapwise) bending moment evaluated at the blade root</td>
 <td>N m</td>
 </tr>
@@ -191,8 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validation.html">Model Validation Methodology</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 
 <div class="relations">
@@ -200,7 +203,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="validation.html" title="previous chapter">Model Validation Methodology</a></li>
-      <li>Next: <a href="faq.html" title="next chapter">Frequently Asked Questions</a></li>
+      <li>Next: <a href="faq.html" title="next chapter">FAQ</a></li>
   </ul></li>
 </ul>
 </div>

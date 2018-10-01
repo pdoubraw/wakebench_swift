@@ -40,53 +40,71 @@
 <p>Participants are asked to simulate the mean wake behind a single turbine (between 1 D and 8 D) operating in a neutral atmosphere under the inflow described below. Please observe the following guidelines:</p>
 <ul class="simple">
 <li>Simulation tools should be used to the limit of their capabilities. Two-dimensional, steady-state solutions are accepted for low-fidelity models. Mid- and high-fidelity models are expected to provide time series of three-dimensional flow fields from which the mean quantities will be diagnosed.</li>
-<li>Time-stepped simulations should be run for an absolute minimum of 10 minutes of usable data  (i.e., in addition to the spin-up time required by their simulation tool). The recommended time of simulation is 60 minutes, so that six realizations of a 10-minute period may be combined to produce a statistically significant representation of the flow field under the prescribed inflow.</li>
+<li>Time-stepped simulations should be run to convergence, for statistically representative 10-minute conditions. The minimum recommended time of simulation is 60 minutes, so that six realizations of a 10-minute period may be combined to produce a statistically significant representation of the flow field under the prescribed inflow. Whenever possible, 100+ minutes of simulation should be the target.</li>
 <li>The choice of domain size, grid spacing, time step, and other model configuration parameters is left to the discretion of the participant.</li>
 <li>All provided results must observe the variable definitions and units as explicitly defined in <a class="reference internal" href="glossary.html#glossary"><span class="std std-ref">Glossary</span></a>.</li>
 </ul>
 <p><strong>Inflow Conditions</strong></p>
 <p>The information below should be used by the benchmark participants to simulate atmospheric inflow (in the case of higher-fidelity models) or to constrain the parameters used to initialize the model (in the case of lower-fidelity models). Not all information given will necessarily be used to perform the simulations. Note that the values provided refer to the ensemble average of six 10-minute temporal averages.</p>
-<table border="1" class="docutils">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col width="41%" />
-<col width="9%" />
-<col width="6%" />
-<col width="44%" />
+<col width="10%" />
+<col width="40%" />
+<col width="10%" />
+<col width="10%" />
+<col width="30%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Variable</th>
-<th class="head">Value</th>
-<th class="head">Unit</th>
-<th class="head">Remark</th>
-</tr>
-</thead>
 <tbody valign="top">
+<tr class="row-odd"><td>Variable</td>
+<td>Short Description</td>
+<td>Value</td>
+<td>Unit</td>
+<td>Remark</td>
+</tr>
 <tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle \overline{U}_{hub} \rangle\)</span></td>
+<td>Mean hub-height wind speed</td>
 <td>8.3</td>
 <td>m/s</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{TI}_{hub} \rangle\)</span></td>
+<td>Mean hub-height turbulence intensity</td>
 <td>10.5</td>
 <td>%</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle \alpha\rangle\)</span></td>
+<td>Mean wind-speed profile power-law exponent</td>
 <td>0.14</td>
 <td>-</td>
 <td>&#160;</td>
 </tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(z_0\)</span></td>
+<td>Roughness length</td>
+<td>0.005-0.05</td>
+<td>m</td>
+<td>Ensemble range for intercept of <span class="math notranslate nohighlight">\(\log(z)-U\)</span> curve from sonic measurements</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(z_i\)</span></td>
+<td>Atmospheric boundary layer height</td>
+<td>n/a</td>
+<td>m</td>
+<td>&#160;</td>
+</tr>
 <tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle z/L \rangle\)</span></td>
+<td>Stability parameter</td>
 <td>0.004</td>
 <td>-</td>
 <td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
 </tr>
 <tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle u_* \rangle\)</span></td>
+<td>Friction velocity</td>
 <td>0.41</td>
 <td>m/s</td>
 <td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
 </tr>
 <tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{w'\theta_v'} \rangle\)</span></td>
+<td>Kinematic vertical turbulent heat flux</td>
 <td>-0.002</td>
 <td>K m/s</td>
 <td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
@@ -94,21 +112,27 @@
 </tbody>
 </table>
 <p><strong>Turbine Operation</strong></p>
-<p>The official wind-turbine model released with this benchmark is the FAST v7 model of the V27 SWiFT wind turbine. The FAST v7 model was ported to the current version of FAST, called OpenFAST. This version is also provided as supplementary material. Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.</p>
+<p>The official wind-turbine model released with this benchmark is the FAST v7 model of the V27 SWiFT wind turbine. Please check back later for this model.</p>
+<p>The FAST v7 model was ported to the current version of FAST, called OpenFAST. This version is also provided as supplementary material. Please check back later for this model.</p>
+<p>Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.</p>
 </div>
 <div class="section" id="phase-1-code-calibration">
 <h2>Phase 1: Code Calibration<a class="headerlink" href="#phase-1-code-calibration" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><em>The objective of this phase is to provide an opportunity for model calibration before the blind comparison.</em></div></blockquote>
 <p>In Phase 1 of the benchmark, the wind-turbine wake is not yet considered. Instead, the atmospheric inflow and turbine response are considered. Participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis.</p>
+<p>The calibration is used to modify inputs that are of high uncertainty to ensure that output quantities of interest are correct.</p>
 <p><strong>Atmospheric Inflow</strong></p>
-<p>During this exercise, the simulated atmospheric inflow is compared to the measured atmospheric inflow (this may not be applicable to lower-fidelity models). Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
+<p>During this exercise, the simulated atmospheric inflow is compared to measured atmospheric inflow (this may not be applicable to lower-fidelity models).
+For the quantities of interest that were provided in the benchmark definition, the simulated values are simply compared to the range of acceptable values across the ensemble of measurements (which thus far has only been provided for roughness length).
+For additional quantities of interest, the simulated values are compared to the mean and range of measured values within the ensemble that makes up this benchmark.</p>
+<p>The inputs with high uncertainty which may need calibration include: roughness length, surface heat flux, atmospheric boundary layer height. The quantities of interest that will be considered can be found in <a class="reference internal" href="validation.html#validation"><span class="std std-ref">Model Validation Methodology</span></a>. Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Simulation setup:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_simulation_setup.txt</span></code> with three columns: parameter description, parameter value, parameter unit. Number of rows is the number of parameters provided. Requested parameters are:</dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_simulation_setup.txt</span></code> with three columns: parameter description, parameter value, parameter unit. Comments should be preceded by #. As many comment lines as necessary can be added, but no header is necessary. Number of rows is the number of parameters provided. A template can be seen in … Requested parameters are:</dt>
 <dd><ul class="first last">
 <li>Mesh grid spacing in the three spatial dimensions (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)</li>
 <li>Temporal resolution of the output (<span class="math notranslate nohighlight">\(\Delta t\)</span>)</li>
@@ -128,7 +152,7 @@
 <li><dl class="first docutils">
 <dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=18.5~\mathrm{m})\)</span></dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_top.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v\)</span>, w)` and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_bot.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
 </ul>
 </dd>
 </dl>
@@ -136,7 +160,7 @@
 <li><dl class="first docutils">
 <dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=32.0~\mathrm{m})\)</span></dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_hub.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v$, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_hub.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
 </ul>
 </dd>
 </dl>
@@ -144,13 +168,13 @@
 <li><dl class="first docutils">
 <dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=45.0~\mathrm{m})\)</span></dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_bot.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v$, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_top.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Temporally-averaged vertical profile of <span class="math notranslate nohighlight">\(U$ at :math:`(x=-65,y=0)\)</span></dt>
+<dt>Temporally-averaged vertical profile of <span class="math notranslate nohighlight">\(U at :math:`(x=-65,y=0)\)</span></dt>
 <dd><ul class="first last">
 <li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_U_vertical_profile.txt</span></code> with two columns (<span class="math notranslate nohighlight">\(z,U\)</span>) and <span class="math notranslate nohighlight">\(n_z\)</span> rows.</li>
 </ul>
@@ -164,7 +188,7 @@
 <li><dl class="first docutils">
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_inflow_steady_state.txt</span></code> with three columns: variable name, variable value, variable unit. The requested variables are the atmospheric inflow validation metrics listed below.</li>
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_inflow_steady_state.txt</span></code> with three columns: variable name, variable value, variable unit. The requested variables are the <a class="reference internal" href="validation.html#validation"><span class="std std-ref">atmospheric inflow quantities of interest</span></a>.</li>
 </ul>
 </dd>
 </dl>
@@ -177,9 +201,9 @@
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Time series of <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(M_x\)</span></dt>
+<dt>Time series of power, torque, pitch, and blade-root flapwise bending moment</dt>
 <dd><ul class="first last">
-<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_wtg_response.txt</span></code> with three columns (<span class="math notranslate nohighlight">\(t,P,M_x\)</span>) and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_wtg_response.txt</span></code> with three columns (<span class="math notranslate nohighlight">\(t,P,M_y\)</span>) and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
 </ul>
 </dd>
 </dl>
@@ -218,7 +242,7 @@
 <li>Mesh grid spacing in the three spatial dimensions (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)</li>
 <li>Temporal resolution of the output (<span class="math notranslate nohighlight">\(\Delta t\)</span>)</li>
 <li>Number of points in each of the four dimensions (<span class="math notranslate nohighlight">\(n_x, n_y, n_z, n_t\)</span>)</li>
-<li>Any constants used to initialize the model (e.g., roughness lenght, inversion height and strength, surface heat flux…)</li>
+<li>Any constants used to initialize the model (e.g., roughness length, inversion height and strength, surface heat flux…)</li>
 </ul>
 </dd>
 </dl>
@@ -314,8 +338,7 @@
 <li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validation.html">Model Validation Methodology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 
 <div class="relations">

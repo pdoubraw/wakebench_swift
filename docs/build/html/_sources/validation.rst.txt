@@ -22,7 +22,7 @@ Simulation results uploaded by the participants will be processed by the benchma
 Wake Quantities of Interest
 ---------------------------
 
-The uploaded results will be processed by the benchmark organizers to diagnose quantities of interest with the publicly released notebooks (available in this repository) and the `SAMWICh toolbox <https://github.com/ewquon/waketracking>`_. For the evoluion benchmarks (:ref:`Neutral <swift_neutral_evolution>` and :ref:`Stable <swift_stable_evolution>`), the wake characterization quantities of interest are the following:
+The uploaded results will be processed by the benchmark organizers to diagnose quantities of interest with the publicly released notebooks (available in this repository) and the `SAMWICh toolbox <https://github.com/ewquon/waketracking>`_. For the evolution benchmarks (:ref:`Neutral <swift_neutral_evolution>` and :ref:`Stable <swift_stable_evolution>`), the wake characterization quantities of interest are the following:
 
 - Horizontal profile at :math:`z=z_{hub}` of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)
 - Vertical profile at :math:`y=y_{hub}` of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)
