@@ -1,0 +1,362 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Neutral Benchmark &#8212; SWiFT Benchmarks  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Stable Benchmark" href="swift_stable_evolution.html" />
+    <link rel="prev" title="Measurements" href="measurements.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="neutral-benchmark">
+<span id="swift-neutral-evolution"></span><h1>Neutral Benchmark<a class="headerlink" href="#neutral-benchmark" title="Permalink to this headline">¶</a></h1>
+<p>This benchmark focuses on <strong>Wake Evolution in a Nearly Neutral Atmosphere</strong>. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see <a class="reference internal" href="index.html#the-swift-benchmarks"><span class="std std-ref">The SWiFT Benchmarks</span></a>.</p>
+<div class="section" id="the-simulation">
+<h2>The Simulation<a class="headerlink" href="#the-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Participants are asked to simulate the mean wake behind a single turbine (between 1 D and 8 D) operating in a neutral atmosphere under the inflow described below. Please observe the following guidelines:</p>
+<ul class="simple">
+<li>Simulation tools should be used to the limit of their capabilities. Two-dimensional, steady-state solutions are accepted for low-fidelity models. Mid- and high-fidelity models are expected to provide time series of three-dimensional flow fields from which the mean quantities will be diagnosed.</li>
+<li>Time-stepped simulations should be run for an absolute minimum of 10 minutes of usable data  (i.e., in addition to the spin-up time required by their simulation tool). The recommended time of simulation is 60 minutes, so that six realizations of a 10-minute period may be combined to produce a statistically significant representation of the flow field under the prescribed inflow.</li>
+<li>The choice of domain size, grid spacing, time step, and other model configuration parameters is left to the discretion of the participant.</li>
+<li>All provided results must observe the variable definitions and units as explicitly defined in <a class="reference internal" href="glossary.html#glossary"><span class="std std-ref">Glossary</span></a>.</li>
+</ul>
+<p><strong>Inflow Conditions</strong></p>
+<p>The information below should be used by the benchmark participants to simulate atmospheric inflow (in the case of higher-fidelity models) or to constrain the parameters used to initialize the model (in the case of lower-fidelity models). Not all information given will necessarily be used to perform the simulations. Note that the values provided refer to the ensemble average of six 10-minute temporal averages.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="9%" />
+<col width="6%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Value</th>
+<th class="head">Unit</th>
+<th class="head">Remark</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle \overline{U}_{hub} \rangle\)</span></td>
+<td>8.3</td>
+<td>m/s</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{TI}_{hub} \rangle\)</span></td>
+<td>10.5</td>
+<td>%</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle \alpha\rangle\)</span></td>
+<td>0.14</td>
+<td>-</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle z/L \rangle\)</span></td>
+<td>0.004</td>
+<td>-</td>
+<td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle u_* \rangle\)</span></td>
+<td>0.41</td>
+<td>m/s</td>
+<td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{w'\theta_v'} \rangle\)</span></td>
+<td>-0.002</td>
+<td>K m/s</td>
+<td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Turbine Operation</strong></p>
+<p>The official wind-turbine model released with this benchmark is the FAST v7 model of the V27 SWiFT wind turbine. The FAST v7 model was ported to the current version of FAST, called OpenFAST. This version is also provided as supplementary material. Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.</p>
+</div>
+<div class="section" id="phase-1-code-calibration">
+<h2>Phase 1: Code Calibration<a class="headerlink" href="#phase-1-code-calibration" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><em>The objective of this phase is to provide an opportunity for model calibration before the blind comparison.</em></div></blockquote>
+<p>In Phase 1 of the benchmark, the wind-turbine wake is not yet considered. Instead, the atmospheric inflow and turbine response are considered. Participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis.</p>
+<p><strong>Atmospheric Inflow</strong></p>
+<p>During this exercise, the simulated atmospheric inflow is compared to the measured atmospheric inflow (this may not be applicable to lower-fidelity models). Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Simulation setup:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_simulation_setup.txt</span></code> with three columns: parameter description, parameter value, parameter unit. Number of rows is the number of parameters provided. Requested parameters are:</dt>
+<dd><ul class="first last">
+<li>Mesh grid spacing in the three spatial dimensions (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)</li>
+<li>Temporal resolution of the output (<span class="math notranslate nohighlight">\(\Delta t\)</span>)</li>
+<li>Number of points in each of the four dimensions (<span class="math notranslate nohighlight">\(n_x, n_y, n_z, n_t\)</span>)</li>
+<li>Any constants used to initialize the model (e.g., roughness lenght, inversion height and strength, surface heat flux, wake expansion coefficient…)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Results for time-stepping simulation tools:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=18.5~\mathrm{m})\)</span></dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_top.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v\)</span>, w)` and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=32.0~\mathrm{m})\)</span></dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_hub.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v$, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> at <span class="math notranslate nohighlight">\((x=-65,y=0,z=45.0~\mathrm{m})\)</span></dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_rotor_bot.txt</span></code> with four columns <span class="math notranslate nohighlight">\((t, u, v$, w)\)</span> and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Temporally-averaged vertical profile of <span class="math notranslate nohighlight">\(U$ at :math:`(x=-65,y=0)\)</span></dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_U_vertical_profile.txt</span></code> with two columns (<span class="math notranslate nohighlight">\(z,U\)</span>) and <span class="math notranslate nohighlight">\(n_z\)</span> rows.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Results for steady-state simulation tools:</dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_inflow_steady_state.txt</span></code> with three columns: variable name, variable value, variable unit. The requested variables are the atmospheric inflow validation metrics listed below.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Wind Turbine Response</strong></p>
+<p>Once the atmospheric inflow is verified to match the conditions specified within the benchmark (within an acceptable range, determined by the upper and lower bounds of the ensemble mean of each quantity considered), the turbine response is compared to measured values. Participants are asked to submit the following results:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Results for time-stepping simulation tools:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Time series of <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(M_x\)</span></dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_wtg_response.txt</span></code> with three columns (<span class="math notranslate nohighlight">\(t,P,M_x\)</span>) and <span class="math notranslate nohighlight">\(n_t\)</span> rows.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Results for steady-state simulation tools:</dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_wtg_response_steady_state.txt</span></code> with three columns: variable name, variable value, variable unit. The requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="phase-2-blind-comparison">
+<h2>Phase 2: Blind Comparison<a class="headerlink" href="#phase-2-blind-comparison" title="Permalink to this headline">¶</a></h2>
+<p>In Phases 2 and 3 of the benchmark, the downstream evolution of the wind-turbine wake is considered. Phase 2 is composed of two parts. First, a code-to-code comparison is made without considering the wake measurements. Second, the simulation results are compared to measurements.</p>
+<p><strong>Code-to-Code Comparison</strong></p>
+<blockquote>
+<div><em>The objective of the first step in the blind comparison is to identify potential errors in model configuration, which might be evident in the form of outliers when the model results are cross-compared.</em></div></blockquote>
+<p><strong>Code-to-Measurements Comparison</strong></p>
+<blockquote>
+<div><em>The objective of the second step of the blind comparison is to provide a first assessment of the skill of the simulation tool.</em></div></blockquote>
+<p>In both parts of this phase, participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis. Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Simulation setup:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_simulation_setup.txt</span></code> with three columns: parameter description, parameter value, parameter unit. Number of rows is the number of parameters provided. Requested parameters are:</dt>
+<dd><ul class="first last">
+<li>Mesh grid spacing in the three spatial dimensions (<span class="math notranslate nohighlight">\(\Delta x, \Delta y, \Delta z\)</span>)</li>
+<li>Temporal resolution of the output (<span class="math notranslate nohighlight">\(\Delta t\)</span>)</li>
+<li>Number of points in each of the four dimensions (<span class="math notranslate nohighlight">\(n_x, n_y, n_z, n_t\)</span>)</li>
+<li>Any constants used to initialize the model (e.g., roughness lenght, inversion height and strength, surface heat flux…)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Mesh information does not require its own file. It is contained within the wind flow files.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Results for time-stepping simulation tools:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Time series of <span class="math notranslate nohighlight">\(u, v, w\)</span> on two-dimensional planes parallel to the rotor at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, and between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments.</dt>
+<dd><ul class="first last">
+<li>Upload nine files, one for each <span class="math notranslate nohighlight">\(x\)</span> distance requested</li>
+<li>Each file should be named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_&lt;x&gt;D.&lt;format&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> can be -2.5, 1, 2, 3, 4, 5, 6, 7, 8</li>
+<li>Each file will contain a 4-dimensional data set, with the following dimensions: <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, and velocity component. The size of the data array will be <span class="math notranslate nohighlight">\(n_t \times n_y \times n_z \times 3\)</span>.</li>
+<li>Accepted file formats are <code class="docutils literal notranslate"><span class="pre">TBD</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Results for steady-state simulation tools:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Mean of <span class="math notranslate nohighlight">\(u, v, w\)</span> on two-dimensional planes parallel to the rotor at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, and between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments.</dt>
+<dd><ul class="first last">
+<li>Upload nine files, one for each <span class="math notranslate nohighlight">\(x\)</span> distance requested</li>
+<li>Each file should be named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.&lt;format&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> can be -2.5, 1, 2, 3, 4, 5, 6, 7, 8</li>
+<li>Each file will contain a 3-dimensional data set, with the following dimensions: <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, and velocity component. The size of the data array will be <span class="math notranslate nohighlight">\(n_y \times n_z \times 3\)</span>.</li>
+<li>Accepted file formats are <code class="docutils literal notranslate"><span class="pre">TBD</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="phase-3-iteration">
+<h2>Phase 3: Iteration<a class="headerlink" href="#phase-3-iteration" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><em>The objective of this phase is to interrogate results to understand where models work well and where improvements are required.</em></div></blockquote>
+<p>In Phase 3, participants are encouraged to revise their simulations and submit updated results. Results from similar models are grouped accordingly to help identify potential improvements to the code or its use. No calibration of the models can be performed at this stage. The calibration is limited to Phase 1. At each iteration, participants are asked to submit the same files requested in Phase 2 in addition to:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Description of updates to the simulation</dt>
+<dd><ul class="first last">
+<li>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;submission_date_YYMMDD&gt;_updates.txt</span></code> which clearly identifies what was changed from the previous submission to the current, and why the changes were made.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">SWiFT Benchmarks</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Neutral Benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-simulation">The Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#phase-1-code-calibration">Phase 1: Code Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#phase-2-blind-comparison">Phase 2: Blind Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#phase-3-iteration">Phase 3: Iteration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swift_stable_evolution.html">Stable Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Model Validation Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="measurements.html" title="previous chapter">Measurements</a></li>
+      <li>Next: <a href="swift_stable_evolution.html" title="next chapter">Stable Benchmark</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Paula Doubrawa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/swift_neutral_evolution.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

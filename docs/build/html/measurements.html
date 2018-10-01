@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Measurements &#8212; SWiFT Benchmarks  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Neutral Benchmark" href="swift_neutral_evolution.html" />
+    <link rel="prev" title="Timeline" href="timeline.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="measurements">
+<span id="id1"></span><h1>Measurements<a class="headerlink" href="#measurements" title="Permalink to this headline">¶</a></h1>
+<p>More information about the instrumentation and data processing performed by Sandia National Laboratories can be found in <a class="reference external" href="https://a2e.energy.gov/data/wake/attach/wake-steering-instr-and-proc-vdap.pdf">SWiFT Wake Steering Instrumentation and Data Processing</a>.</p>
+<div class="section" id="atmospheric-inflow-measurements">
+<h2>Atmospheric Inflow Measurements<a class="headerlink" href="#atmospheric-inflow-measurements" title="Permalink to this headline">¶</a></h2>
+<p>Inflow conditions are obtained from a meteorological tower located upstream of the turbine (approximately 2.5 D upstream of the turbine for southerly winds). The instrumentation includes:</p>
+<ul class="simple">
+<li>Sonic anemometers at 10 m, 18 m, 32 m, 45 m, and 58 m above the ground</li>
+<li>Cup anemometers at 18 m, 31.5 m, and 45 m above the ground</li>
+<li>Wind vane at 29.5 m above the ground</li>
+<li>Two barometric pressure sensors at 2 m and 27.5 m above the ground</li>
+<li>Two relative humidity sensors at 2 m, 27.5 m, and 56.5 m above the ground</li>
+<li>Two air temperature sensors at 2 m, 27.5 m, and 56.5 m above the ground</li>
+</ul>
+<p>Several quantities are diagnosed from these measurements. These quantities are computed for each individual 10-minute period. The values provided in each benchmark as inflow conditions are ensemble averages that consider all of the 10-minute periods used to define the benchmark. Some relevant remarks about</p>
+</div>
+<div class="section" id="wind-turbine-measurements">
+<h2>Wind Turbine Measurements<a class="headerlink" href="#wind-turbine-measurements" title="Permalink to this headline">¶</a></h2>
+<p>The turbine operation data used to define the benchmarks are collected with the following sensors:</p>
+<ul class="simple">
+<li>Wind speed and direction sensor at the back of the nacelle</li>
+<li>Yaw heading sensor</li>
+<li>Turbine power and torque sensor</li>
+<li>Blade-pitch sensor</li>
+</ul>
+</div>
+<div class="section" id="wake-measurements">
+<h2>Wake Measurements<a class="headerlink" href="#wake-measurements" title="Permalink to this headline">¶</a></h2>
+<p>The wind turbine wake is characterized using the Technical University of Denmark (DTU) SpinnerLidar.</p>
+<ul class="simple">
+<li>Line-of-sight velocity (<span class="math notranslate nohighlight">\(v_{los}\)</span>) is measured in curved surfaces that span a large extent in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> but a small extent in <span class="math notranslate nohighlight">\(x\)</span>. For the purposes of the benchmark, these curved surfaces are therefore assumed to be <span class="math notranslate nohighlight">\(y-z\)</span> planes at a fixed <span class="math notranslate nohighlight">\(x\)</span> distance downstream of the rotor.</li>
+<li>One plane of <span class="math notranslate nohighlight">\(v_{los}\)</span> is retrieved approximately every 2 seconds.</li>
+<li>The dynamics benchmark considers measurement periods in which the focal length was kept constant throughout the 10-minute measuring span. This provides high-frequency data from which to quantify the dynamic behavior of the wake.</li>
+<li>The evolution benchmarks consider measurement periods in which the focal length cycled through several <span class="math notranslate nohighlight">\(x\)</span> values, typically between 1 D and 5 D. The temporal frequency is lower, but the wake evolution can be quantified as it propagates downstream.</li>
+</ul>
+</div>
+<div class="section" id="measurement-data-selection-criteria">
+<h2>Measurement Data Selection Criteria<a class="headerlink" href="#measurement-data-selection-criteria" title="Permalink to this headline">¶</a></h2>
+<p>The three benchmarks are realistic wake cases measured at the SWiFT facility.</p>
+<p>To define the benchmarks, high-frequency measurements of the inflow conditions and turbine operation were first averaged over a 10-minute period. To define each benchmark, all available 10-minute periods were searched for inflow (e.g. turbulence intensity) and operation (e.g. yaw misalignment) homogeneity and consistent wake measurement strategy (e.g. a single focal length or multiple focal lengths).</p>
+<p>The 10-minute periods selected for each benchmark are referred to as an <em>ensemble</em>. These periods are assumed to be independent and, when combined, to provide a statistically robust representation of the environmental conditions, being therefore suitable for model validation. More information on the criteria used to select periods for each benchmark can be found in their respective pages: <a class="reference internal" href="swift_neutral_evolution.html#swift-neutral-evolution"><span class="std std-ref">Neutral</span></a>, <a class="reference internal" href="swift_stable_evolution.html#swift-stable-evolution"><span class="std std-ref">Stable</span></a>, and <a class="reference internal" href="swift_unstable_dynamics.html#swift-unstable-dynamics"><span class="std std-ref">Unstable</span></a>.</p>
+</div>
+<div class="section" id="site-layout">
+<h2>Site Layout<a class="headerlink" href="#site-layout" title="Permalink to this headline">¶</a></h2>
+<p>The coordinate system of the validation analyses places the wind turbine at the origin. The geographical location of the wind turbine is given below.</p>
+<ul class="simple">
+<li>GPS Coordinates: 33.60795° N, 102.04862° W</li>
+<li>Standard UTM Zone 13: 773846.5 Easting, 3722593.7 Northing</li>
+<li>Elevation of the wind turbine base: 1018.0 m</li>
+</ul>
+<p>The meteorological tower used to collect upstream measurements is located approximately 2.5 rotor diameters upstream from the WTG rotor when winds come from the south. The schematic below shows the site layout for an example where the mean wind direction is from the southwest sector.</p>
+<div class="figure">
+<img alt="_images/site_sketch.png" src="_images/site_sketch.png" />
+</div>
+<p><em>Figure: Schematic of the wind turbine and meteorological tower geographical location, and of the lidar measurements collected downwind.</em></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">SWiFT Benchmarks</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">Timeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Measurements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#atmospheric-inflow-measurements">Atmospheric Inflow Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wind-turbine-measurements">Wind Turbine Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wake-measurements">Wake Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#measurement-data-selection-criteria">Measurement Data Selection Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#site-layout">Site Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swift_neutral_evolution.html">Neutral Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swift_stable_evolution.html">Stable Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Model Validation Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="timeline.html" title="previous chapter">Timeline</a></li>
+      <li>Next: <a href="swift_neutral_evolution.html" title="next chapter">Neutral Benchmark</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Paula Doubrawa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/measurements.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

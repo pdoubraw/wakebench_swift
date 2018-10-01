@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Model Validation Methodology &#8212; SWiFT Benchmarks  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="Unstable Benchmark" href="swift_unstable_dynamics.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="model-validation-methodology">
+<span id="validation"></span><h1>Model Validation Methodology<a class="headerlink" href="#model-validation-methodology" title="Permalink to this headline">¶</a></h1>
+<p>For variable definitions, refer to the <a class="reference internal" href="glossary.html#glossary"><span class="std std-ref">Glossary</span></a>.</p>
+<div class="section" id="atmospheric-inflow-quantities-of-interest">
+<h2>Atmospheric Inflow Quantities of Interest<a class="headerlink" href="#atmospheric-inflow-quantities-of-interest" title="Permalink to this headline">¶</a></h2>
+<p>Simulation results uploaded by the participants will be processed by the benchmark organizers to diagnose atmospheric inflow quantities of interest with the publicly released notebooks (available in this repository).</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\overline{U}_{hub}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\overline{TI}_{hub}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\alpha\)</span></li>
+<li><span class="math notranslate nohighlight">\(\overline{\Delta \beta}_{rotor}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\sigma_u\)</span></li>
+<li><span class="math notranslate nohighlight">\(\sigma_v\)</span></li>
+<li><span class="math notranslate nohighlight">\(\sigma_w\)</span></li>
+<li><span class="math notranslate nohighlight">\(u_*\)</span></li>
+<li><span class="math notranslate nohighlight">\(t_*\)</span></li>
+</ul>
+</div>
+<div class="section" id="wake-quantities-of-interest">
+<h2>Wake Quantities of Interest<a class="headerlink" href="#wake-quantities-of-interest" title="Permalink to this headline">¶</a></h2>
+<p>The uploaded results will be processed by the benchmark organizers to diagnose quantities of interest with the publicly released notebooks (available in this repository) and the <a class="reference external" href="https://github.com/ewquon/waketracking">SAMWICh toolbox</a>. For the evoluion benchmarks (<a class="reference internal" href="swift_neutral_evolution.html#swift-neutral-evolution"><span class="std std-ref">Neutral</span></a> and <a class="reference internal" href="swift_stable_evolution.html#swift-stable-evolution"><span class="std std-ref">Stable</span></a>), the wake characterization quantities of interest are the following:</p>
+<ul class="simple">
+<li>Horizontal profile at <span class="math notranslate nohighlight">\(z=z_{hub}\)</span> of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)</li>
+<li>Vertical profile at <span class="math notranslate nohighlight">\(y=y_{hub}\)</span> of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream (in a meandering frame-of-reference)</li>
+<li>Mean wake shape at each requested distance downstream</li>
+<li>Mean wake length scale at each requested distance downstream</li>
+<li>Spatial median of velocity deficit within the wake bounds at each requested distance downstream</li>
+</ul>
+<p>For the wake dynamics benchmark (<a class="reference internal" href="swift_unstable_dynamics.html#swift-unstable-dynamics"><span class="std std-ref">Unstable</span></a>), one additional quantity of interest is:</p>
+<ul class="simple">
+<li>Temporal standard deviation of wake center position in <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span></li>
+</ul>
+</div>
+<div class="section" id="validation-metrics">
+<h2>Validation Metrics<a class="headerlink" href="#validation-metrics" title="Permalink to this headline">¶</a></h2>
+<p><strong>Phase 1: Code Calibration</strong></p>
+<p>During the calibration phase, absolute values characterizing atmospheric inflow and turbine operation will be directly compared to the measured values. For each quantity (e.g. temporally averaged hub-height turbulence intensity) the simulation values will be compared to the average, the minimum, and the maximum of the measurement ensemble used to define the benchmark, as illustrated in the schematic.</p>
+<div class="figure">
+<img alt="_images/comparison.png" src="_images/comparison.png" />
+</div>
+<p><em>Figure: Schematic of comparison between</em> <span class="math notranslate nohighlight">\(\overline{q}\)</span> <em>values produced by different codes (markers), the mean of the measurements ensemble</em> <span class="math notranslate nohighlight">\(\langle \overline{q} \rangle\)</span> <em>(solid line) and the minimum</em> <span class="math notranslate nohighlight">\(\overline{q}_{min}\)</span> <em>and maximum</em> <span class="math notranslate nohighlight">\(\overline{q}_{max}\)</span> <em>range of the measurements ensemble (dashed lines)</em></p>
+<p><strong>Phase 2, Part 1: Blind Comparison (Code-to-Code)</strong></p>
+<p>Here, the codes are cross-compared without considering the measurements. In this scenario, absolute values of the wake quantities of interest will be compared visually. The objective is to identify gross discrepancies so that simulation results can be improved before the measurement data are released.</p>
+<div class="figure">
+<img alt="_images/cross-comparison.png" src="_images/cross-comparison.png" />
+</div>
+<p><em>Figure: Schematic of visual code-to-code comparison for a wake quantity of interest</em></p>
+<p><strong>Phase 2, Part 2: Blind Comparison (Codes-to-Measurements)</strong></p>
+<p>Here, the simulation results are compared to the measurements. The visual comparison described above is supplemented by error metrics (e.g., mean error, root-mean-square error).</p>
+<p><strong>Phase 3: Iteration</strong></p>
+<p>Participants are encouraged to iterate on their results and re-submit them for a comparison to the measurements. In this phase, the visual comparison and error-metric comparison are also performed and the improvement in error metrics is tracked relative to prior submissions of model results by the same participant.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">SWiFT Benchmarks</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="timeline.html">Timeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swift_neutral_evolution.html">Neutral Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swift_stable_evolution.html">Stable Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Model Validation Methodology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#atmospheric-inflow-quantities-of-interest">Atmospheric Inflow Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wake-quantities-of-interest">Wake Quantities of Interest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#validation-metrics">Validation Metrics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="swift_unstable_dynamics.html" title="previous chapter">Unstable Benchmark</a></li>
+      <li>Next: <a href="glossary.html" title="next chapter">Glossary</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Paula Doubrawa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/validation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
