@@ -14,7 +14,6 @@ The SWiFT Benchmarks
    validation
    glossary
    faq
-   support
 
 .. figure:: ../../images/swift_sunrise.jpg
 
