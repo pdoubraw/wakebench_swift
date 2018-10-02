@@ -15,7 +15,12 @@ The SWiFT Benchmarks
    glossary
    faq
 
++--------------------------------------------------------------------------+
+| To participate, `sign up here! <https://www.surveymonkey.com/r/T7JB27W>`_|
++--------------------------------------------------------------------------+
+
 .. figure:: ../../images/swift_sunrise.jpg
+	:align: center
 
 *Figure: The DOE SWiFT facility in Lubbock, Texas*
 

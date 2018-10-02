@@ -1,7 +1,7 @@
 .. _validation:
 
-Model Validation Methodology
-============================
+Validation Methodology
+======================
 
 For variable definitions, refer to the :ref:`glossary`.
 
