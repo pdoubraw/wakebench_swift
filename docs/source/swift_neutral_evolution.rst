@@ -110,7 +110,7 @@ The inputs with high uncertainty which may need calibration include: A, B, C. Pa
     - Upload a single file named ``<participant_id>_<YYMMDD>_wtg_response.txt`` 
 		- ``<YYMMDD>`` is the file submission date
 		- File shall have one column per variable (including time) and :math:`n_t` rows 
-		- Requested variables are time series of power, torque, pitch, and blade-root flapwise bending moment
+		- Requested variables are time series of rotor speed, power, torque, pitch, and blade-root out-of-plane bending moment
 - Results for steady-state simulation tools:
     - Upload a single file named ``<participant_id>_<YYMMDD>_wtg_response_steady_state.txt`` 
 		- ``<YYMMDD>`` is the file submission date
