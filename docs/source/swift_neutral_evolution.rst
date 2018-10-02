@@ -4,7 +4,18 @@
 Neutral Benchmark
 =================
 
-This benchmark focuses on **Wake Evolution in a Nearly Neutral Atmosphere**. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see :ref:`the_swift_benchmarks`.
+.. pull-quote::
+
+    **This exercise will reveal how well different models perform under the most commonly simulated stratification condition.**
+
+This benchmark focuses on "Wake Evolution under Nearly Neutral Atmospheric Conditions". The validation focuses on the mean characteristics of a single wake as it propagates in a neutral atmosphere.  The objective of this exercise is to evaluate the ability of various models to simulate the downstream evolution of a single wake under the simplest possible environmental conditions: flat terrain, no weather events, and nearly neutral atmospheric conditions. 
+
+This benchmark welcomes all models. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see :ref:`the_swift_benchmarks`.
+
+The Measurements
+----------------
+
+Wake measurements were collected between 1 D and 5 D downstream of the rotor, and the validation focuses on mean wake characteristics at these distances. In addition, models will be cross-compared for quantities of interest for which measurements are not available.
 
 
 The Simulation
@@ -30,7 +41,7 @@ The information below should be used by the benchmark participants to simulate a
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \overline{U}_{hub} \rangle`        | Mean hub-height wind speed                 | 8.3        | m/s   |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`\langle \overline{TI}_{hub} \rangle`       | Mean hub-height turbulence intensity       | 10.5       | %     |                                                                                  |
+    | :math:`\langle \overline{TI}_{hub} \rangle`       | Mean hub-height turbulence intensity       | 10.8       | %     |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \alpha\rangle`                     | Mean wind-speed profile power-law exponent | 0.14       | \-    |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
@@ -40,7 +51,7 @@ The information below should be used by the benchmark participants to simulate a
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle z/L \rangle`                       | Stability parameter                        | 0.004      | \-    | Computed from sonic measurements at :math:`z=10` m                               |       
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`\langle u_* \rangle`                       | Friction velocity                          | 0.41       | m/s   | Computed from sonic measurements at :math:`z=10` m                               |
+    | :math:`\langle u_* \rangle`                       | Friction velocity                          | 0.44       | m/s   | Computed from sonic measurements at :math:`z=10` m                               |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \overline{w'\theta_v'} \rangle`    | Kinematic vertical turbulent heat flux     | -0.002     | K m/s | Computed from sonic measurements at :math:`z=10` m                               |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+    
@@ -74,31 +85,31 @@ The inputs with high uncertainty which may need calibration include: roughness l
 
 - Simulation setup:
     - Upload a single file named ``<participant_id>_<YMMDD>_simulation_setup.txt`` 
-		- A template for this file can be downloaded :download:`here <../../file_templates/template_181001_simulation_setup.txt>`
-		- ``<YYMMDD>`` is the file submission date
-		- File shall have three columns: parameter description, parameter value, parameter unit
-		- Comments should be preceded by #. As many comment lines as necessary can be added.
-		- No header is necessary. Number of rows is the number of parameters provided. 
-		- Requested parameters are:    
-			- Mesh grid spacing in the three spatial dimensions (:math:`\Delta x, \Delta y, \Delta z`)
-			- Temporal resolution of the output (:math:`\Delta t`)
-			- Number of points in each of the four dimensions (:math:`n_x, n_y, n_z, n_t`)
-			- Any constants used to initialize the model (e.g., roughness lenght, inversion height and strength, surface heat flux, wake expansion coefficient...)
-    - Mesh information does not require its own file; it is contained within the wind flow files.			
+        - A template for this file can be downloaded :download:`here <../../file_templates/template_181001_simulation_setup.txt>`
+        - ``<YYMMDD>`` is the file submission date
+        - File shall have three columns: parameter description, parameter value, parameter unit
+        - Comments should be preceded by #. As many comment lines as necessary can be added.
+        - No header is necessary. Number of rows is the number of parameters provided. 
+        - Requested parameters are:    
+            - Mesh grid spacing in the three spatial dimensions (:math:`\Delta x, \Delta y, \Delta z`)
+            - Temporal resolution of the output (:math:`\Delta t`)
+            - Number of points in each of the four dimensions (:math:`n_x, n_y, n_z, n_t`)
+            - Any constants used to initialize the model (e.g., roughness lenght, inversion height and strength, surface heat flux, wake expansion coefficient...)
+    - Mesh information does not require its own file; it is contained within the wind flow files.           
 - Results for time-stepping simulation tools:      
     - Upload files named ``<participant_id>_<YYMMDD>_uvw_<x>D_<t>.vtk``
-		- A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_-2.5D_0.vtk>`
-		- ``<YYMMDD>`` is the file submission date
-		- ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D` 
-		- ``<t>`` is the time of the flow field in the file, in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)
-		- File should contain :math:`u,v,w` values on a 2-dimensional plane (along :math:`y` and :math:`z`) at a fixed time and downstream distance (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`)
-		- A total of :math:`n_t` files should be uploaded
+        - A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_-2.5D_0.vtk>`
+        - ``<YYMMDD>`` is the file submission date
+        - ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D` 
+        - ``<t>`` is the time of the flow field in the file, in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)
+        - File should contain :math:`u,v,w` values on a 2-dimensional plane (along :math:`y` and :math:`z`) at a fixed time and downstream distance (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`)
+        - A total of :math:`n_t` files should be uploaded
 - Results for steady-state simulation tools:
     - Upload a single file named ``<participant_id>_<YYMMDD>_uvw_<x>D_steady_state.txt`` 
-		- A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_-2.5D_0.vtk>`
-		- ``<YYMMDD>`` is the file submission date
-		- ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D` 
-		- File should contain :math:`u,v,w` values on a 2-dimensional plane (along :math:`y` and :math:`z`) at a fixed time and downstream distance (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`)		
+        - A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_-2.5D_0.vtk>`
+        - ``<YYMMDD>`` is the file submission date
+        - ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D` 
+        - File should contain :math:`u,v,w` values on a 2-dimensional plane (along :math:`y` and :math:`z`) at a fixed time and downstream distance (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`)        
 
 **Wind Turbine Response**
 
@@ -108,14 +119,14 @@ The inputs with high uncertainty which may need calibration include: A, B, C. Pa
 
 - Results for time-stepping simulation tools:       
     - Upload a single file named ``<participant_id>_<YYMMDD>_wtg_response.txt`` 
-		- ``<YYMMDD>`` is the file submission date
-		- File shall have one column per variable (including time) and :math:`n_t` rows 
-		- Requested variables are time series of rotor speed, power, torque, pitch, and blade-root out-of-plane bending moment
+        - ``<YYMMDD>`` is the file submission date
+        - File shall have one column per variable (including time) and :math:`n_t` rows 
+        - Requested variables are time series of rotor speed, power, torque, pitch, and blade-root out-of-plane bending moment
 - Results for steady-state simulation tools:
     - Upload a single file named ``<participant_id>_<YYMMDD>_wtg_response_steady_state.txt`` 
-		- ``<YYMMDD>`` is the file submission date
-		- File shall have three columns: variable name, variable value, variable unit
-		- Requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them
+        - ``<YYMMDD>`` is the file submission date
+        - File shall have three columns: variable name, variable value, variable unit
+        - Requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them
 
 Phase 2: Blind Comparison
 -------------------------
@@ -136,12 +147,12 @@ In both parts of this phase, participants are requested to submit their results 
     - Same format as in Phase 1
 
 - Results for time-stepping simulation tools: 
-	- Same format as in Phase 1, but now uploaded not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments 
-	- The number of uploaded files will be :math:`9\times n_t` (one per downstream distance and per time)  
+    - Same format as in Phase 1, but now uploaded not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments 
+    - The number of uploaded files will be :math:`9\times n_t` (one per downstream distance and per time)  
 
 - Results for steady-state simulation tools:
-	- Same format as in Phase 1, but now uploaded not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments 
-	- The number of uploaded files will be :math:`9`, one for each :math:`x` distance requested
+    - Same format as in Phase 1, but now uploaded not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments 
+    - The number of uploaded files will be :math:`9`, one for each :math:`x` distance requested
         
 
 Phase 3: Iteration
@@ -153,6 +164,6 @@ In Phase 3, participants are encouraged to revise their simulations and submit u
 
 - Description of updates to the simulation
     - Upload a single file named ``<participant_id>_<YYMMDD>_updates.txt`` 
-		- ``<YYMMDD>`` is the file submission date
-		- File contents clearly identify what was changed from the previous submission to the current, and why the changes were made
-		- File can be freely formatted by participants
+        - ``<YYMMDD>`` is the file submission date
+        - File contents clearly identify what was changed from the previous submission to the current, and why the changes were made
+        - File can be freely formatted by participants

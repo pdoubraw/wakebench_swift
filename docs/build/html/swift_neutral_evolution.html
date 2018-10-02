@@ -34,7 +34,14 @@
             
   <div class="section" id="neutral-benchmark">
 <span id="swift-neutral-evolution"></span><h1>Neutral Benchmark<a class="headerlink" href="#neutral-benchmark" title="Permalink to this headline">¶</a></h1>
-<p>This benchmark focuses on <strong>Wake Evolution in a Nearly Neutral Atmosphere</strong>. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see <a class="reference internal" href="index.html#the-swift-benchmarks"><span class="std std-ref">The SWiFT Benchmarks</span></a>.</p>
+<blockquote class="pull-quote">
+<div><strong>This exercise will reveal how well different models perform under the most commonly simulated stratification condition.</strong></div></blockquote>
+<p>This benchmark focuses on “Wake Evolution under Nearly Neutral Atmospheric Conditions”. The validation focuses on the mean characteristics of a single wake as it propagates in a neutral atmosphere.  The objective of this exercise is to evaluate the ability of various models to simulate the downstream evolution of a single wake under the simplest possible environmental conditions: flat terrain, no weather events, and nearly neutral atmospheric conditions.</p>
+<p>This benchmark welcomes all models. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see <a class="reference internal" href="index.html#the-swift-benchmarks"><span class="std std-ref">The SWiFT Benchmarks</span></a>.</p>
+<div class="section" id="the-measurements">
+<h2>The Measurements<a class="headerlink" href="#the-measurements" title="Permalink to this headline">¶</a></h2>
+<p>Wake measurements were collected between 1 D and 5 D downstream of the rotor, and the validation focuses on mean wake characteristics at these distances. In addition, models will be cross-compared for quantities of interest for which measurements are not available.</p>
+</div>
 <div class="section" id="the-simulation">
 <h2>The Simulation<a class="headerlink" href="#the-simulation" title="Permalink to this headline">¶</a></h2>
 <p>Participants are asked to simulate the mean wake behind a single turbine (between 1 D and 8 D) operating in a neutral atmosphere under the inflow described below. Please observe the following guidelines:</p>
@@ -69,7 +76,7 @@
 </tr>
 <tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{TI}_{hub} \rangle\)</span></td>
 <td>Mean hub-height turbulence intensity</td>
-<td>10.5</td>
+<td>10.8</td>
 <td>%</td>
 <td>&#160;</td>
 </tr>
@@ -99,7 +106,7 @@
 </tr>
 <tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle u_* \rangle\)</span></td>
 <td>Friction velocity</td>
-<td>0.41</td>
+<td>0.44</td>
 <td>m/s</td>
 <td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
 </tr>
@@ -126,7 +133,7 @@
 <p>During this exercise, the simulated atmospheric inflow is compared to measured atmospheric inflow (this may not be applicable to lower-fidelity models).
 For the quantities of interest that were provided in the benchmark definition, the simulated values are simply compared to the range of acceptable values across the ensemble of measurements (which thus far has only been provided for roughness length).
 For additional quantities of interest, the simulated values are compared to the mean and range of measured values within the ensemble that makes up this benchmark.</p>
-<p>The inputs with high uncertainty which may need calibration include: roughness length, surface heat flux, atmospheric boundary layer height. The quantities of interest that will be considered can be found in <a class="reference internal" href="validation.html#validation"><span class="std std-ref">Model Validation Methodology</span></a>. Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
+<p>The inputs with high uncertainty which may need calibration include: roughness length, surface heat flux, atmospheric boundary layer height. The quantities of interest that will be considered can be found in <a class="reference internal" href="validation.html#validation"><span class="std std-ref">Validation Methodology</span></a>. Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Simulation setup:</dt>
@@ -324,6 +331,7 @@ For additional quantities of interest, the simulated values are compared to the 
 <li class="toctree-l1"><a class="reference internal" href="timeline.html">Timeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Neutral Benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-measurements">The Measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-simulation">The Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#phase-1-code-calibration">Phase 1: Code Calibration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#phase-2-blind-comparison">Phase 2: Blind Comparison</a></li>
@@ -332,7 +340,7 @@ For additional quantities of interest, the simulated values are compared to the 
 </li>
 <li class="toctree-l1"><a class="reference internal" href="swift_stable_evolution.html">Stable Benchmark</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="validation.html">Model Validation Methodology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation Methodology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
