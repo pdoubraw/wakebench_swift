@@ -73,7 +73,7 @@ The benchmark is open to all participants of the International Energy Agency (IE
 FAQ
 ---
 
-Please post your questions regarding the SWiFT Benchmarks to (check back later for link).
+Please post your questions regarding the SWiFT Benchmarks to `this forum <https://wind.nrel.gov/forum/wind/viewforum.php?f=43>`_.
 
 
 References
