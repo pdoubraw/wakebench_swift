@@ -16,7 +16,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Model Validation Methodology" href="validation.html" />
+    <link rel="next" title="Validation Methodology" href="validation.html" />
     <link rel="prev" title="Stable Benchmark" href="swift_stable_evolution.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -34,7 +34,87 @@
             
   <div class="section" id="unstable-benchmark">
 <span id="swift-unstable-dynamics"></span><h1>Unstable Benchmark<a class="headerlink" href="#unstable-benchmark" title="Permalink to this headline">¶</a></h1>
-<p>This benchmark focuses on <strong>Wake Dynamics in an Unstable Atmosphere</strong>. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see <a class="reference internal" href="index.html#the-swift-benchmarks"><span class="std std-ref">The SWiFT Benchmarks</span></a>.</p>
+<blockquote class="pull-quote">
+<div><strong>This exercise will reveal how well different models perform under unstable conditions, where large and active turbulent eddies often lead to wake meandering and accelerate wake recovery</strong></div></blockquote>
+<p>This benchmark focuses on “Wake Dynamics under Unstable Atmospheric Conditions”. The validation focuses on the dynamic characteristics of a single wake at a fixed downstream distance. The objective of this exercise is to evaluate the ability of various models to simulate the unsteady behavior of wakes, which is extremely relevant if models are to be used to diagnose the effects of turbulence on performance and reliability.</p>
+<p>This benchmark welcomes all time-stepping models. This document provides detailed, quantitative information necessary to engage in this specific SWiFT Benchmark. For general information about the SWiFT Benchmarks, see <a class="reference internal" href="index.html#the-swift-benchmarks"><span class="std std-ref">The SWiFT Benchmarks</span></a>.</p>
+<div class="section" id="the-measurements">
+<h2>The Measurements<a class="headerlink" href="#the-measurements" title="Permalink to this headline">¶</a></h2>
+<p>Wake measurements were collected at 3 D downstream of the rotor, and the validation considers mean and dynamic wake characteristics at this distance. In addition, models will be cross-compared for quantities of interest and downstream distances for which measurements are not available.</p>
+</div>
+<div class="section" id="the-simulation">
+<h2>The Simulation<a class="headerlink" href="#the-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Participants are asked to simulate the mean wake behind a single turbine (between 1 D and 8 D) operating in an unstable atmosphere under the inflow described below. Please observe the <a class="reference internal" href="simulations.html#simulations"><span class="std std-ref">simulation guidelines</span></a> for information that is common to all SWiFT benchmarks (e.g., turbine model, requested output files).</p>
+<p><strong>Inflow Conditions</strong></p>
+<p>The information below should be used by the benchmark participants to simulate atmospheric inflow (in the case of higher-fidelity models) or to constrain the parameters used to initialize the model (in the case of lower-fidelity models). Not all information given will necessarily be used to perform the simulations. Note that the values provided refer to the ensemble average of five 10-minute temporal averages.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="10%" />
+<col width="40%" />
+<col width="10%" />
+<col width="10%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Variable</td>
+<td>Short Description</td>
+<td>Value</td>
+<td>Unit</td>
+<td>Remark</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle \overline{U}_{hub} \rangle\)</span></td>
+<td>Mean hub-height wind speed</td>
+<td>6.5</td>
+<td>m/s</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{TI}_{hub} \rangle\)</span></td>
+<td>Mean hub-height turbulence intensity</td>
+<td>12.8</td>
+<td>%</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle \alpha\rangle\)</span></td>
+<td>Mean wind-speed profile power-law exponent</td>
+<td>0.18</td>
+<td>-</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(z_0\)</span></td>
+<td>Roughness length</td>
+<td>0.005-0.05</td>
+<td>m</td>
+<td>Value obtained from the neutral benchmark measurements</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(z_i\)</span></td>
+<td>Atmospheric boundary layer height</td>
+<td>n/a</td>
+<td>m</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle z/L \rangle\)</span></td>
+<td>Stability parameter</td>
+<td>-0.102</td>
+<td>-</td>
+<td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\langle u_* \rangle\)</span></td>
+<td>Friction velocity</td>
+<td>0.032</td>
+<td>m/s</td>
+<td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\langle \overline{w'\theta_v'} \rangle\)</span></td>
+<td>Kinematic vertical turbulent heat flux</td>
+<td>0.023</td>
+<td>K m/s</td>
+<td>Computed from sonic measurements at <span class="math notranslate nohighlight">\(z=10\)</span> m</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Turbine Operation</strong></p>
+<p>Please see <a class="reference internal" href="simulations.html#simulations"><span class="std std-ref">turbine model</span></a> details.</p>
+</div>
 </div>
 
 
@@ -56,10 +136,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="timeline.html">Timeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulations.html">Benchmark Simulations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swift_neutral_evolution.html">Neutral Benchmark</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swift_stable_evolution.html">Stable Benchmark</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Unstable Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="validation.html">Model Validation Methodology</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Unstable Benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-measurements">The Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-simulation">The Simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation Methodology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
@@ -69,7 +154,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="swift_stable_evolution.html" title="previous chapter">Stable Benchmark</a></li>
-      <li>Next: <a href="validation.html" title="next chapter">Model Validation Methodology</a></li>
+      <li>Next: <a href="validation.html" title="next chapter">Validation Methodology</a></li>
   </ul></li>
 </ul>
 </div>

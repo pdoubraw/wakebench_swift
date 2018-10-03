@@ -20,7 +20,7 @@ Wake measurements were collected between 1 D and 5 D downstream of the rotor, an
 The Simulation
 --------------
 
-Participants are asked to simulate the mean wake behind a single turbine (between 1 D and 8 D) operating in a neutral atmosphere under the inflow described below. Please observe the :ref:`simulation guidelines <simulations>` for information that is common to all SWiFT benchmarks (e.g., turbine model, requested output files).
+Participants are asked to simulate the mean wake behind a single turbine (between 1 D and 8 D) operating in a stable atmosphere under the inflow described below. Please observe the :ref:`simulation guidelines <simulations>` for information that is common to all SWiFT benchmarks (e.g., turbine model, requested output files).
 
 **Inflow Conditions**
 
@@ -38,7 +38,7 @@ The information below should be used by the benchmark participants to simulate a
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \alpha\rangle`                     | Mean wind-speed profile power-law exponent | 0.51       | \-    |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`z_0`                                       | Roughness length                           | 0.005-0.05 | m     | Value deduced from the neutral benchmark definition                              | 
+    | :math:`z_0`                                       | Roughness length                           | 0.005-0.05 | m     | Value obtained from the neutral benchmark measurements                           | 
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`z_i`                                       | Atmospheric boundary layer height          | n/a        | m     |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
