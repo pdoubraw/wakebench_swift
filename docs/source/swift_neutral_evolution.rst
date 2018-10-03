@@ -40,7 +40,7 @@ The information below should be used by the benchmark participants to simulate a
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \alpha\rangle`                     | Mean wind-speed profile power-law exponent | 0.14       | \-    |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`z_0`                                       | Roughness length                           | 0.005-0.05 | m     | Ensemble range for intercept of :math:`\log(z)-U` curve from sonic measurements  | 
+    | :math:`z_0`                                       | Roughness length                           | 0.005-0.05 | m     | Ensemble range for intercept of :math:`[\log(z),U]` curve from sonic measurements| 
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`z_i`                                       | Atmospheric boundary layer height          | n/a        | m     |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
@@ -49,6 +49,8 @@ The information below should be used by the benchmark participants to simulate a
     | :math:`\langle u_* \rangle`                       | Friction velocity                          | 0.44       | m/s   | Computed from sonic measurements at :math:`z=10` m                               |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \overline{w'\theta_v'} \rangle`    | Kinematic vertical turbulent heat flux     | -0.002     | K m/s | Computed from sonic measurements at :math:`z=10` m                               |
+    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+    
+    | :math:`\langle \theta_v \rangle_0`                | Virtual potential temperature near ground  | 314.4      | K     | Computed from temperature and pressure sensors at :math:`z=2` m                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+    
 
 **Turbine Operation**

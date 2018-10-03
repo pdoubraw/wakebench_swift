@@ -6,7 +6,7 @@ Unstable Benchmark
 
 .. pull-quote::
 
-    **This exercise will reveal how well different models perform under unstable conditions, where large and active turbulent eddies often lead to wake meandering and accelerate wake recovery**
+    **This exercise will reveal how well different models perform under unstable conditions, where large and active turbulent eddies often lead to wake meandering and accelerate wake recovery.**
 
 This benchmark focuses on "Wake Dynamics under Unstable Atmospheric Conditions". The validation focuses on the dynamic characteristics of a single wake at a fixed downstream distance. The objective of this exercise is to evaluate the ability of various models to simulate the unsteady behavior of wakes, which is extremely relevant if models are to be used to diagnose the effects of turbulence on performance and reliability.
 
@@ -48,7 +48,9 @@ The information below should be used by the benchmark participants to simulate a
     | :math:`\langle u_* \rangle`                       | Friction velocity                          | 0.032      | m/s   | Computed from sonic measurements at :math:`z=10` m                               |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \overline{w'\theta_v'} \rangle`    | Kinematic vertical turbulent heat flux     | 0.023      | K m/s | Computed from sonic measurements at :math:`z=10` m                               |
-    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+    
+    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+  
+    | :math:`\langle \theta_v \rangle_0`                | Virtual potential temperature near ground  | 290.9      | K     | Computed from temperature and pressure sensors at :math:`z=2` m                  |
+    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+ 
 
 **Turbine Operation**
 
