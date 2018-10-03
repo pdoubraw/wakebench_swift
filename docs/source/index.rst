@@ -14,7 +14,6 @@ The SWiFT Benchmarks
    swift_unstable_dynamics
    validation
    glossary
-   faq
 
 +--------------------------------------------------------------------------+
 | To participate, `sign up here! <https://www.surveymonkey.com/r/T7JB27W>`_|
@@ -70,6 +69,11 @@ Data Accessibility
 ------------------
 
 The benchmark is open to all participants of the International Energy Agency (IEA) Wind Task 31.
+
+FAQ
+---
+
+Please post your questions regarding the SWiFT Benchmarks to (check back later for link).
 
 
 References
