@@ -71,9 +71,9 @@ Unless otherwise noted, all data are analyzed in a coordinate system where :math
 
 .. figure:: ../../images/coordinate_system_noyaw.png
 
-*Figure: Coordinate system to be used in the validation analyses, when turbine is facing the mean wind.*
+*Figure: Coordinate system to be used in the validation analyses, when turbine is facing the mean wind. Coordinates (x,y,z) given in meters from origin.*
 
 .. figure:: ../../images/coordinate_system_yawed.png
 
-*Figure: Coordinate system to be used in the validation analyses, when turbine is misaligned with a positive yaw.*
+*Figure: Coordinate system to be used in the validation analyses, when turbine is misaligned with a positive yaw. Coordinates (x,y,z) given in meters from origin.*
 
