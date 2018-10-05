@@ -29,7 +29,7 @@ The uploaded results will be processed by the benchmark organizers to diagnose q
 	- at :math:`z=z_{wake\_center}` for the meandering frame-of-reference 
 - Vertical profile of temporally averaged horizontal wind speed and velocity deficit at each requested distance downstream
 	- at :math:`y=y_{hub}` for the fixed frame-of-reference
-	- at :math:`y=y_{wake\_center}` for the meandering frame-of-reference (in a meandering frame-of-reference and a fixed frame-of-reference)
+	- at :math:`y=y_{wake\_center}` for the meandering frame-of-reference 
 - Shape of mean wake at each requested distance downstream (qualitative comparison)
 - Length scale of mean wake at each requested distance downstream, estimated as the spread parameters (in :math:`y` and :math:`z`) of the 2-dimensional Gaussian fit to the velocity-deficit field
 - Median value of velocity deficit considering all points within the mean-wake bounds, computed at each requested distance downstream

@@ -75,14 +75,16 @@ The inputs with high uncertainty which may need calibration include: A, B, C. Pa
 
 - Results for time-stepping simulation tools:       
     - Upload a single file named ``<participant_id>_<YYMMDD>_wtg_response.txt`` 
+        - A template for this file can be downloaded :download:`here <../../file_templates/template_181005_wtg_response.txt>`
         - ``<YYMMDD>`` is the file submission date
         - File shall have one column per variable (including time) and :math:`n_t` rows 
         - Requested variables are time series of rotor speed, power, torque, pitch, and blade-root out-of-plane bending moment
 - Results for steady-state simulation tools:
     - Upload a single file named ``<participant_id>_<YYMMDD>_wtg_response_steady_state.txt`` 
+        - A template for this file can be downloaded :download:`here <../../file_templates/template_181005_wtg_response_steady_state.txt>`    
         - ``<YYMMDD>`` is the file submission date
         - File shall have three columns: variable name, variable value, variable unit
-        - Requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them
+        - Requested variables are the same as those requested for the time-stepping tools, and their value set to NaN when model cannot simulate them
 
 Benchmark Phase 2: Blind Comparison
 -----------------------------------

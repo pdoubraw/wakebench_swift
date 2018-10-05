@@ -139,6 +139,7 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_wtg_response.txt</span></code></dt>
 <dd><ul class="first last">
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181005_wtg_response.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
 <li>File shall have one column per variable (including time) and <span class="math notranslate nohighlight">\(n_t\)</span> rows</li>
 <li>Requested variables are time series of rotor speed, power, torque, pitch, and blade-root out-of-plane bending moment</li>
@@ -156,9 +157,10 @@ For additional quantities of interest, the simulated values are compared to the 
 <li><dl class="first docutils">
 <dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_wtg_response_steady_state.txt</span></code></dt>
 <dd><ul class="first last">
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181005_wtg_response_steady_state.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
 <li>File shall have three columns: variable name, variable value, variable unit</li>
-<li>Requested variables are the same as those requested for the time-stepping tools, except when model cannot simulate them</li>
+<li>Requested variables are the same as those requested for the time-stepping tools, and their value set to NaN when model cannot simulate them</li>
 </ul>
 </dd>
 </dl>
@@ -267,7 +269,6 @@ For additional quantities of interest, the simulated values are compared to the 
 <li class="toctree-l1"><a class="reference internal" href="swift_unstable_dynamics.html">Unstable Benchmark</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validation.html">Validation Methodology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 
 <div class="relations">
