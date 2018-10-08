@@ -53,19 +53,14 @@ The inputs with high uncertainty which may need calibration include: roughness l
             - Any constants used to initialize the model (e.g., roughness lenght, inversion height and strength, surface heat flux, wake expansion coefficient...)
     - Mesh information does not require its own file; it is contained within the wind flow files.           
 - Results for time-stepping simulation tools:      
-    - Upload files named ``<participant_id>_<YYMMDD>_uvw_<x>D_<t>.vtk``
-        - A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_-2.5D_0.vtk>`
+    - Upload a single file named ``<participant_id>_<YYMMDD>_uvw_<x>D.nc``
+        - A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_2D.nc>`
         - ``<YYMMDD>`` is the file submission date
-        - ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D` 
-        - ``<t>`` is the time of the flow field in the file, in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)
-        - File should contain :math:`u,v,w` values on a 2-dimensional plane (along :math:`y` and :math:`z`) at a fixed time and downstream distance (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`)
-        - A total of :math:`n_t` files should be uploaded
+        - ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D`     
+        - File should contain :math:`u,v,w` values, which are four-dimensional: :math:`(n_t \times n_x \times n_y \times n_z)`. For this submission, :math:`n_x=1` (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`) and the time is given in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)        
 - Results for steady-state simulation tools:
-    - Upload a single file named ``<participant_id>_<YYMMDD>_uvw_<x>D_steady_state.txt`` 
-        - A template for this file can be downloaded :download:`here <../../file_templates/template_181001_uvw_-2.5D_0.vtk>`
-        - ``<YYMMDD>`` is the file submission date
-        - ``<x>`` is the downstream distance :math:`x` normalized by the rotor diameter :math:`D` 
-        - File should contain :math:`u,v,w` values on a 2-dimensional plane (along :math:`y` and :math:`z`) at a fixed time and downstream distance (:math:`x=-65~\mathrm{m}\sim-2.5\mathrm{D}`)        
+    - Upload a single file named ``<participant_id>_<YYMMDD>_uvw_<x>D_steady_state.nc`` 
+        - Same as for time-stepping simulation tools, but now :math:`n_t=1`
 
 **Wind Turbine Response**
 
@@ -104,14 +99,9 @@ In both parts of this phase, participants are requested to submit their results 
 - Simulation setup:
     - Same format as in Phase 1
 
-- Results for time-stepping simulation tools: 
-    - Same format as in Phase 1, but now uploaded not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments 
+- Results for time-stepping simulation tools and for steady-state simulation tools: 
+    - Same format as in Phase 1, but now several netcdf files are uploaded, one for each :math:`x` dsitance (i.e., not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments)
     - The number of uploaded files will be :math:`9\times n_t` (one per downstream distance and per time)  
-
-- Results for steady-state simulation tools:
-    - Same format as in Phase 1, but now uploaded not only at :math:`x=-2.5` D, but also between :math:`x=1` D and :math:`x=8` D in :math:`1` D increments 
-    - The number of uploaded files will be :math:`9`, one for each :math:`x` distance requested
-        
 
 Benchmark Phase 3: Iteration
 ----------------------------

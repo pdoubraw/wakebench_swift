@@ -94,14 +94,12 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload files named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D_&lt;t&gt;.vtk</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D.nc</span></code></dt>
 <dd><ul class="first last">
-<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181001_uvw_-2.5D_0.vtk" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181001_uvw_2D.nc" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> is the downstream distance <span class="math notranslate nohighlight">\(x\)</span> normalized by the rotor diameter <span class="math notranslate nohighlight">\(D\)</span></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;t&gt;</span></code> is the time of the flow field in the file, in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)</li>
-<li>File should contain <span class="math notranslate nohighlight">\(u,v,w\)</span> values on a 2-dimensional plane (along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>) at a fixed time and downstream distance (<span class="math notranslate nohighlight">\(x=-65~\mathrm{m}\sim-2.5\mathrm{D}\)</span>)</li>
-<li>A total of <span class="math notranslate nohighlight">\(n_t\)</span> files should be uploaded</li>
+<li>File should contain <span class="math notranslate nohighlight">\(u,v,w\)</span> values, which are four-dimensional: <span class="math notranslate nohighlight">\((n_t \times n_x \times n_y \times n_z)\)</span>. For this submission, <span class="math notranslate nohighlight">\(n_x=1\)</span> (<span class="math notranslate nohighlight">\(x=-65~\mathrm{m}\sim-2.5\mathrm{D}\)</span>) and the time is given in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)</li>
 </ul>
 </dd>
 </dl>
@@ -114,12 +112,9 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.txt</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.nc</span></code></dt>
 <dd><ul class="first last">
-<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_181001_uvw_-2.5D_0.vtk" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> is the downstream distance <span class="math notranslate nohighlight">\(x\)</span> normalized by the rotor diameter <span class="math notranslate nohighlight">\(D\)</span></li>
-<li>File should contain <span class="math notranslate nohighlight">\(u,v,w\)</span> values on a 2-dimensional plane (along <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>) at a fixed time and downstream distance (<span class="math notranslate nohighlight">\(x=-65~\mathrm{m}\sim-2.5\mathrm{D}\)</span>)</li>
+<li>Same as for time-stepping simulation tools, but now <span class="math notranslate nohighlight">\(n_t=1\)</span></li>
 </ul>
 </dd>
 </dl>
@@ -191,19 +186,10 @@ For additional quantities of interest, the simulated values are compared to the 
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Results for time-stepping simulation tools:</dt>
+<dt>Results for time-stepping simulation tools and for steady-state simulation tools:</dt>
 <dd><ul class="first last">
-<li>Same format as in Phase 1, but now uploaded not only at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, but also between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments</li>
+<li>Same format as in Phase 1, but now several netcdf files are uploaded, one for each <span class="math notranslate nohighlight">\(x\)</span> dsitance (i.e., not only at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, but also between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments)</li>
 <li>The number of uploaded files will be <span class="math notranslate nohighlight">\(9\times n_t\)</span> (one per downstream distance and per time)</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Results for steady-state simulation tools:</dt>
-<dd><ul class="first last">
-<li>Same format as in Phase 1, but now uploaded not only at <span class="math notranslate nohighlight">\(x=-2.5\)</span> D, but also between <span class="math notranslate nohighlight">\(x=1\)</span> D and <span class="math notranslate nohighlight">\(x=8\)</span> D in <span class="math notranslate nohighlight">\(1\)</span> D increments</li>
-<li>The number of uploaded files will be <span class="math notranslate nohighlight">\(9\)</span>, one for each <span class="math notranslate nohighlight">\(x\)</span> distance requested</li>
 </ul>
 </dd>
 </dl>
