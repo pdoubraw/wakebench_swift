@@ -3,9 +3,15 @@
 The SWiFT Benchmarks
 ====================
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| To participate, `sign up here! <https://goo.gl/forms/cCMnRHAkXQ6VNm3c2>`_                                                                                    |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Questions? Use `this forum <https://wind.nrel.gov/forum/wind/viewforum.php?f=43>`_.                                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. toctree::
    :hidden:
-   
+
    timeline
    measurements
    simulations
@@ -14,10 +20,6 @@ The SWiFT Benchmarks
    swift_unstable_dynamics
    validation
    glossary
-
-+--------------------------------------------------------------------------+
-| To participate, `sign up here! <https://www.surveymonkey.com/r/T7JB27W>`_|
-+--------------------------------------------------------------------------+
 
 .. figure:: ../../images/swift_sunrise.jpg
 	:align: center
@@ -63,7 +65,7 @@ Each benchmark has 3 phases:
 3. Iteration
 	Participants are encouraged to revise their simulations and perform their own comparison with the measurement data.
 
-Each phase will be carried out concurrently for the three benchmarks, according to this :ref:`timeline`. 
+Each phase will be carried out concurrently for the three benchmarks, according to this :ref:`timeline`.
 
 Data Accessibility
 ------------------

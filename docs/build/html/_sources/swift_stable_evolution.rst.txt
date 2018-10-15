@@ -26,9 +26,9 @@ Participants are asked to simulate the mean wake behind a single turbine (betwee
 
 The information below should be used by the benchmark participants to simulate atmospheric inflow (in the case of higher-fidelity models) or to constrain the parameters used to initialize the model (in the case of lower-fidelity models). Not all information given will necessarily be used to perform the simulations. Note that the values provided refer to the ensemble average of six 10-minute temporal averages.
 
-.. table:: 
+.. table::
     :widths: 10 40 10 10 30
-    
+
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | Variable                                          | Short Description                          | Value      | Unit  | Remark                                                                           |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
@@ -38,18 +38,18 @@ The information below should be used by the benchmark participants to simulate a
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \alpha\rangle`                     | Mean wind-speed profile power-law exponent | 0.51       | \-    |                                                                                  |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`z_0`                                       | Roughness length                           | 0.005-0.05 | m     | Value obtained from the neutral benchmark measurements                           | 
+    | :math:`z_0`                                       | Roughness length                           | 0.005-0.05 | m     | Value obtained from the neutral benchmark measurements                           |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`z_i`                                       | Atmospheric boundary layer height          | n/a        | m     | No measurements available                                                        |
+    | :math:`z_i`                                       | Atmospheric boundary layer height          | -          | m     | No measurements available                                                        |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
-    | :math:`\langle z/L \rangle`                       | Stability parameter                        | 1.160      | \-    | Computed from sonic measurements at :math:`z=10` m                               |       
+    | :math:`\langle z/L \rangle`                       | Stability parameter                        | 1.160      | \-    | Computed from sonic measurements at :math:`z=10` m                               |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle u_* \rangle`                       | Friction velocity                          | 0.08       | m/s   | Computed from sonic measurements at :math:`z=10` m                               |
     +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \overline{w'\theta_v'} \rangle`    | Kinematic vertical turbulent heat flux     | -0.005     | K m/s | Computed from sonic measurements at :math:`z=10` m                               |
-    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+    
+    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
     | :math:`\langle \theta_v \rangle_0`                | Virtual potential temperature near ground  | 303.7      | K     | Computed from temperature and pressure sensors at :math:`z=2` m                  |
-    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+ 
+    +---------------------------------------------------+--------------------------------------------+------------+-------+----------------------------------------------------------------------------------+
 
 **Turbine Operation**
 

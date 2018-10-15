@@ -16,7 +16,7 @@ Inflow conditions are obtained from a meteorological tower located upstream of t
 - Three relative humidity sensors at 2 m, 27.5 m, and 56.5 m above the ground
 - Three air temperature sensors at 2 m, 27.5 m, and 56.5 m above the ground
 
-Several quantities are diagnosed from these measurements. These quantities are computed for each individual 10-minute period. The values provided in each benchmark as inflow conditions are ensemble averages that consider all of the 10-minute periods used to define the benchmark. 
+Several quantities are diagnosed from these measurements. These quantities are computed for each individual 10-minute period. The values provided in each benchmark as inflow conditions are ensemble averages that consider all of the 10-minute periods used to define the benchmark.
 
 Wind Turbine Measurements
 -------------------------
@@ -35,16 +35,16 @@ Wake Measurements
 The wind turbine wake is characterized using the Technical University of Denmark (DTU) SpinnerLidar.
 
 - Line-of-sight velocity (:math:`v_{los}`) is measured in curved surfaces that span a large extent in :math:`y` and :math:`z` but a small extent in :math:`x`. For the purposes of the benchmark, these curved surfaces are therefore assumed to be :math:`y-z` planes at a fixed :math:`x` distance downstream of the rotor.
-- One plane of :math:`v_{los}` is retrieved approximately every 2 seconds. 
+- One plane of :math:`v_{los}` is retrieved approximately every 2 seconds.
 - The dynamics benchmark considers measurement periods in which the focal length was kept constant throughout the 10-minute measuring span. This provides high-frequency data from which to quantify the dynamic behavior of the wake.
 - The evolution benchmarks consider measurement periods in which the focal length cycled through several :math:`x` values, typically between 1 D and 5 D. The temporal frequency is lower, but the wake evolution can be quantified as it propagates downstream.
 
 Measurement Data Selection Criteria
 -----------------------------------
 
-The three benchmarks are realistic wake cases measured at the SWiFT facility. 
+The three benchmarks are realistic wake cases measured at the SWiFT facility.
 
-To define the benchmarks, high-frequency measurements of the inflow conditions and turbine operation were first averaged over a 10-minute period. To define each benchmark, all available 10-minute periods were searched for inflow (e.g. turbulence intensity) and operation (e.g. yaw misalignment) homogeneity and consistent wake measurement strategy (e.g. a single focal length or multiple focal lengths). 
+To define the benchmarks, high-frequency measurements of the inflow conditions and turbine operation were first averaged over a 10-minute period. To define each benchmark, all available 10-minute periods were searched for inflow (e.g. turbulence intensity) and operation (e.g. yaw misalignment) homogeneity and consistent wake measurement strategy (e.g. a single focal length or multiple focal lengths).
 
 The 10-minute periods selected for each benchmark are referred to as an *ensemble*. These periods are assumed to be independent and, when combined, to provide a statistically robust representation of the environmental conditions, being therefore suitable for model validation. More information on the criteria used to select periods for each benchmark can be found in their respective pages: :ref:`Neutral <swift_neutral_evolution>`, :ref:`Stable <swift_stable_evolution>`, and :ref:`Unstable <swift_unstable_dynamics>`.
 
