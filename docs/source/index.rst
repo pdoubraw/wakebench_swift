@@ -28,7 +28,8 @@ The SWiFT Benchmarks
 
 What is SWiFT?
 --------------
-The Scaled Wind Farm Technology (SWiFT) facility is a ground for research and technology innovation in the field of wind-turbine and wind-plant aerodynamics. The facility is funded by the United States (U.S.) Department of Energy (DoE), and located at Texas Tech University's National Wind Institute Research Center in Lubbock, Texas. All data collected at SWiFT through the wake-steering experiment are available free of charge through the DoE Data Archive Portal (DAP).
+
+The Scaled Wind Farm Technology (SWiFT) facility supports open-source research and technology innovation in the field of wind-turbine and wind-plant aerodynamics. The facility is funded by the United States (U.S.) Department of Energy (DoE), and is operated by Sandia National Laboratories, hosted at Texas Tech University’s National Wind Institute Research Center in Lubbock, Texas. All data collected at SWiFT through the wake-steering experiment are freely available through the DoE Data Archive Portal (DAP).
 
 Atmospheric Conditions at SWiFT
 -------------------------------
