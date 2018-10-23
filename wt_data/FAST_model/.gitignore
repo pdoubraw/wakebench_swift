@@ -1,0 +1,5 @@
+*.out
+*.outb
+*.opt
+*.elm
+*.fsm
