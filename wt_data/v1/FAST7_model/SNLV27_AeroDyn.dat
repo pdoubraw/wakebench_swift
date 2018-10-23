@@ -16,11 +16,11 @@ PRANDtl          HLModel  - Hub-loss model (EQUIL only) [PRANdtl or NONE] (unquo
 1.5e-05          KinVisc  - Kinematic air viscosity [CURRENTLY IGNORED] (m^2/sec)
 0.005            DTAero   - Time interval for aerodynamic calculations (sec)
 5                NumFoil  - Number of airfoil files (-)
-"AeroData\AD_cylinder.dat" FoilNm   - Names of the airfoil files [NumFoil lines] (quoted strings)
-"AeroData\AD_63-235_mod.dat" 
-"AeroData\AD_63-224_mod.dat" 
-"AeroData\AD_63-218_mod.dat" 
-"AeroData\AD_63-214_mod.dat" 
+"AeroData\AD_1_cylinder.dat" FoilNm   - Names of the airfoil files [NumFoil lines] (quoted strings)
+"AeroData\AD_2_63-235_mod.dat" 
+"AeroData\AD_3_63-224_mod.dat" 
+"AeroData\AD_4_63-218_mod.dat" 
+"AeroData\AD_5_63-214_mod.dat" 
 20               BldNodes - Number of blade nodes used for analysis (-)
 RNodes    AeroTwst  DRNodes  Chord  NFoil  PrnElm
  0.82500  13.9573    0.65000  0.589   1   PRINT

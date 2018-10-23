@@ -14,11 +14,32 @@ General Guidelines
 Turbine Model
 -------------
 
-Please check back later.
+The turbine present at the SWiFT test site is a modified version of a Vestas V27. The data related to the wind turbine is stored in the github repository under the folder `wt_data <https://github.com/pdoubraw/wakebench_swift/tree/master/wt_data/>`. A version number is used to accomodate for potential versions of the turbine model that may be released in the future. For now, only one version is present: ``v1``, and it is considered the official wind-turbine model for this benchmark unless specified otherwise.
 
-.. The official wind-turbine model released with this benchmark is the FAST v7 model of the V27 SWiFT wind turbine. Please check back later for this model.
-.. The FAST v7 model was ported to the current version of FAST, called OpenFAST. This version is also provided as supplementary material. Please check back later for this model.
-.. Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.
+The folder  ``wt_data`` has the following subfolders:
+
+- `FAST7_model`: Contains the simulation model for the program `FAST7 <https://nwtc.nrel.gov/FAST7>`. An `OpenFAST <https://nwtc.nrel.gov/FAST7>` version will be provided in the near future. All the necessary files, including the FAST binary are provided in this folder. The model was developed by C. Kelly and J. Whit from Sandia National Laboratory. It was tuned to match the measurements data (see the report mentioned below). Since most measurements were present below rated wind speed, the data are only provided for this range of wind speeds.
+
+- `Raw_model`: To ease the implementation of the turbine model into another format than the FAST format, simple CSV files are provided in this directory. The data matches the data present in the `FAST_model` but its format should be straightforward to read. This folder contains:
+  - ``OperationalConditions.csv``: Pitch and Rotational Speed as function of wind speed. 
+  - ``AD*.csv``: Profile polars
+  - ``Blade_Aero.csv``: Relevant aerodynamic data for the blade (chord, twist, and airfoil) 
+  - ``Blade_Structure.csv``: Relevant structural data for the blade (Mass, Stiffnesses, etc.)
+  - ``Tower_Structure.csv``: Relevant structural data for the tower (Mass, Stiffnesses, etc.)
+
+- `Simulated_data`: This folder contains simulated data obtained using the FAST model. These can be useful to compare the results from another model to the FAST results. Such data includes:
+  - ``RotorPerformances.csv``: Pitch, Rotational Speed, Power, Thrust, Blade Root Flapwise (out-of-plane) moment,  as function of wind speed.
+  - ``BladeAeroPerformances.csv``: Loads and inductions along the span of the blade for different wind speed. (coming soon)
+
+Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.
+
+
+The following publications may be used as references for further details on the model:
+- Christopher L. Kelley and Jonathan Whit, *An Update to the SWiFT V27 Reference Model*, Sandia report SAND2018-11893, 2018
+- Brian R. Resor and Bruce LeBlanc - *An Aeroelastic Reference Model for the SWIFT Turbines* , Sandia report SAND2014-19136, 2014
+
+
+
 
 .. _phase1:
 
