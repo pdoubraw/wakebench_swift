@@ -42,7 +42,7 @@ Validation Metrics
 
 **Phase 1: Code Calibration**
 
-During the calibration phase, absolute values characterizing atmospheric inflow and turbine operation will be directly compared to the measured values. For each quantity (e.g. temporally averaged hub-height turbulence intensity) the simulation values will be compared to the average, the minimum, and the maximum of the measurement ensemble used to define the benchmark, as illustrated in the schematic.
+During the calibration phase, absolute values characterizing atmospheric inflow and turbine operation will be directly compared to the measured values. For each quantity (e.g. temporally averaged hub-height turbulence intensity), the simulation values will be compared to the average, the minimum, and the maximum of the measurement ensemble used to define the benchmark, as illustrated in the schematic.
 
 .. figure:: ../../images/comparison.png
 

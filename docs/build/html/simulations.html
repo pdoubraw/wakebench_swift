@@ -13,7 +13,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Neutral Benchmark" href="swift_neutral_evolution.html" />
@@ -30,8 +30,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <div class="section" id="benchmark-simulations">
@@ -47,30 +45,44 @@
 </div>
 <div class="section" id="turbine-model">
 <h2>Turbine Model<a class="headerlink" href="#turbine-model" title="Permalink to this headline">¶</a></h2>
-<p>The turbine present at the SWiFT test site is a modified version of a Vestas V27. The data related to the wind turbine is stored in the github repository under the folder <cite>wt_data &lt;https://github.com/pdoubraw/wakebench_swift/tree/master/wt_data/&gt;</cite>. A version number is used to accomodate for potential versions of the turbine model that may be released in the future. For now, only one version is present: <code class="docutils literal notranslate"><span class="pre">v1</span></code>, and it is considered the official wind-turbine model for this benchmark unless specified otherwise.</p>
+<p>The turbine present at the SWiFT test site is a modified version of a Vestas V27. The data related to the wind turbine is stored in the github repository under the folder <a class="reference external" href="https://github.com/pdoubraw/wakebench_swift/tree/master/wt_data/">wt_data</a>. A version number is used to accomodate for potential versions of the turbine model that may be released in the future. For now, only one version is present: <code class="docutils literal notranslate"><span class="pre">v1</span></code>, and it is considered the official wind-turbine model for this benchmark unless specified otherwise.</p>
 <p>The folder  <code class="docutils literal notranslate"><span class="pre">wt_data</span></code> has the following subfolders:</p>
 <ul class="simple">
-<li><cite>FAST7_model</cite>: Contains the simulation model for the program <cite>FAST7 &lt;https://nwtc.nrel.gov/FAST7&gt;</cite>. An <cite>OpenFAST &lt;https://nwtc.nrel.gov/FAST7&gt;</cite> version will be provided in the near future. All the necessary files, including the FAST binary are provided in this folder. The model was developed by C. Kelly and J. Whit from Sandia National Laboratory. It was tuned to match the measurements data (see the report mentioned below). Since most measurements were present below rated wind speed, the data are only provided for this range of wind speeds.</li>
-<li><cite>Raw_model</cite>: To ease the implementation of the turbine model into another format than the FAST format, simple CSV files are provided in this directory. The data matches the data present in the <cite>FAST_model</cite> but its format should be straightforward to read. This folder contains:
-- <code class="docutils literal notranslate"><span class="pre">OperationalConditions.csv</span></code>: Pitch and Rotational Speed as function of wind speed.
-- <code class="docutils literal notranslate"><span class="pre">AD*.csv</span></code>: Profile polars
-- <code class="docutils literal notranslate"><span class="pre">Blade_Aero.csv</span></code>: Relevant aerodynamic data for the blade (chord, twist, and airfoil)
-- <code class="docutils literal notranslate"><span class="pre">Blade_Structure.csv</span></code>: Relevant structural data for the blade (Mass, Stiffnesses, etc.)
-- <code class="docutils literal notranslate"><span class="pre">Tower_Structure.csv</span></code>: Relevant structural data for the tower (Mass, Stiffnesses, etc.)</li>
-<li><cite>Simulated_data</cite>: This folder contains simulated data obtained using the FAST model. These can be useful to compare the results from another model to the FAST results. Such data includes:
-- <code class="docutils literal notranslate"><span class="pre">RotorPerformances.csv</span></code>: Pitch, Rotational Speed, Power, Thrust, Blade Root Flapwise (out-of-plane) moment,  as function of wind speed.
-- <code class="docutils literal notranslate"><span class="pre">BladeAeroPerformances.csv</span></code>: Loads and inductions along the span of the blade for different wind speed. (coming soon)</li>
+<li><cite>FAST7_model</cite>: Contains the simulation model for the program <a class="reference external" href="https://nwtc.nrel.gov/FAST7">FAST7</a>. An <a class="reference external" href="https://openfast.readthedocs.io/">OpenFAST</a> version will be provided in the near future. All the necessary files, including the FAST binary are provided in this folder. The model was developed by C. Kelley and J. White from Sandia National Laboratories. The model was tuned to match the measurements data (see the report mentioned below). Since most measurements were present below rated wind speed, the data are only provided for this range of wind speeds.</li>
+<li><dl class="first docutils">
+<dt><cite>Raw_model</cite>: To ease the implementation of the turbine model into another format than the FAST format, simple CSV files are provided in this directory. The data matches the data present in the <cite>FAST_model</cite> but its format should be straightforward to read. This folder contains:</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal notranslate"><span class="pre">OperationalConditions.csv</span></code>: Pitch and Rotational Speed as function of wind speed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">AD*.csv</span></code>: Profile polars</li>
+<li><code class="docutils literal notranslate"><span class="pre">Blade_Aero.csv</span></code>: Relevant aerodynamic data for the blade (chord, twist, and airfoil)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Blade_Structure.csv</span></code>: Relevant structural data for the blade (Mass, Stiffnesses, etc.)</li>
+<li><code class="docutils literal notranslate"><span class="pre">Tower_Structure.csv</span></code>: Relevant structural data for the tower (Mass, Stiffnesses, etc.)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>Simulated_data</cite>: This folder contains simulated data obtained using the FAST model. These can be useful to compare the results from another model to the FAST results. Such data includes:</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal notranslate"><span class="pre">RotorPerformances.csv</span></code>: Pitch, Rotational Speed, Power, Thrust, Blade Root Flapwise (out-of-plane) moment,  as function of wind speed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">BladeAeroPerformances.csv</span></code>: Loads and inductions along the span of the blade for different wind speed. (coming soon)</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 <p>Benchmark participants who choose not to use FAST or OpenFAST for their simulations are responsible for porting this turbine model to their simulation platform, and encouraged to share their developed model with the community.</p>
-<p>The following publications may be used as references for further details on the model:
-- Christopher L. Kelley and Jonathan Whit, <em>An Update to the SWiFT V27 Reference Model</em>, Sandia report SAND2018-11893, 2018
-- Brian R. Resor and Bruce LeBlanc - <em>An Aeroelastic Reference Model for the SWIFT Turbines</em> , Sandia report SAND2014-19136, 2014</p>
+<p>The following publications may be used as references for further details on the model:</p>
+<ul class="simple">
+<li>Christopher L. Kelley and Jonathan White, <em>An Update to the SWiFT V27 Reference Model</em>, Sandia report SAND2018-11893, 2018</li>
+<li>Brian R. Resor and Bruce LeBlanc - <em>An Aeroelastic Reference Model for the SWIFT Turbines</em> , Sandia report SAND2014-19136, 2014</li>
+</ul>
 </div>
 <div class="section" id="benchmark-phase-1-code-calibration">
 <span id="phase1"></span><h2>Benchmark Phase 1: Code Calibration<a class="headerlink" href="#benchmark-phase-1-code-calibration" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><em>The objective of this phase is to provide an opportunity for model calibration before the blind comparison.</em></div></blockquote>
-<p>In Phase 1 of the benchmark, the wind-turbine wake is not yet considered. Instead, the atmospheric inflow and turbine response are considered. Participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis.</p>
+<p>In Phase 1 of the benchmark, the wind-turbine wake is not yet considered. Instead, the atmospheric inflow and turbine response are considered. Participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This process is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis.</p>
 <p>The calibration is used to modify inputs that are of high uncertainty to ensure that output quantities of interest are correct.</p>
 <p><strong>Atmospheric Inflow</strong></p>
 <p>During this exercise, the simulated atmospheric inflow is compared to measured atmospheric inflow (this may not be applicable to lower-fidelity models).
@@ -82,10 +94,10 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Simulation setup:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YMMDD&gt;_simulation_setup.txt</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYYYMMDD&gt;_simulation_setup.yaml</span></code></dt>
 <dd><ul class="first last">
-<li>A template for this file can be downloaded <a class="reference download internal" download="" href="_downloads/3f4da9e831f8987b468caa19dbc79680/template_181001_simulation_setup.txt"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_YYYYMMDD_simulation_setup.yaml" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYYYMMDD&gt;</span></code> is the file submission date</li>
 <li>File shall have three columns: parameter description, parameter value, parameter unit</li>
 <li>Comments should be preceded by #. As many comment lines as necessary can be added.</li>
 <li>No header is necessary. Number of rows is the number of parameters provided.</li>
@@ -113,11 +125,11 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D.nc</span></code> (format <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF 4.0</a>)</dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYYYMMDD&gt;_uvw_&lt;x&gt;D.nc</span></code> (format <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">NetCDF 4.0</a>)</dt>
 <dd><ul class="first last">
-<li>A template for this file can be downloaded <a class="reference download internal" download="" href="_downloads/fcefd319a2169bb56b5716fb6ce21af4/template_181001_uvw_2D.nc"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
-<li>A sample writer for this file can be found in this <a class="reference download internal" download="" href="_downloads/f76215d608c79eaf05116302d8f52a5f/example_write_netcdf.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_YYYYMMDD_uvw_2D.nc" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li>A sample writer for this file can be found in this <a class="reference download internal" href="_downloads/example_write_netcdf.ipynb" download=""><code class="xref download docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYYYMMDD&gt;</span></code> is the file submission date</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;x&gt;</span></code> is the downstream distance <span class="math notranslate nohighlight">\(x\)</span> normalized by the rotor diameter <span class="math notranslate nohighlight">\(D\)</span></li>
 <li>File should contain <span class="math notranslate nohighlight">\(u,v,w\)</span> values, which are four-dimensional: <span class="math notranslate nohighlight">\((n_t \times n_x \times n_y \times n_z)\)</span>. For this submission, <span class="math notranslate nohighlight">\(n_x=1\)</span> (<span class="math notranslate nohighlight">\(x=-65~\mathrm{m}\sim-2.5\mathrm{D}\)</span>) and the time is given in units of seconds, since the start of the simulation usable time (i.e., not counting spin-up)</li>
 </ul>
@@ -132,7 +144,7 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.nc</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYYYMMDD&gt;_uvw_&lt;x&gt;D_steady_state.nc</span></code></dt>
 <dd><ul class="first last">
 <li>Same as for time-stepping simulation tools, but now <span class="math notranslate nohighlight">\(n_t=1\)</span></li>
 </ul>
@@ -152,10 +164,10 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Results for time-stepping simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_wtg_response.txt</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYYYMMDD&gt;_wtg_response.txt</span></code></dt>
 <dd><ul class="first last">
-<li>A template for this file can be downloaded <a class="reference download internal" download="" href="_downloads/f0b3121a10cd49bbcaaab6c8fabe1f9e/template_181005_wtg_response.txt"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_YYYYMMDD_wtg_response.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYYYMMDD&gt;</span></code> is the file submission date</li>
 <li>File shall have one column per variable (including time) and <span class="math notranslate nohighlight">\(n_t\)</span> rows</li>
 <li>Requested variables are time series of rotor speed, power, torque, pitch, and blade-root out-of-plane bending moment</li>
 </ul>
@@ -170,10 +182,10 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Results for steady-state simulation tools:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_wtg_response_steady_state.txt</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYYYMMDD&gt;_wtg_response_steady_state.txt</span></code></dt>
 <dd><ul class="first last">
-<li>A template for this file can be downloaded <a class="reference download internal" download="" href="_downloads/6318dd1e60613cac73b33cebb0ff497f/template_181005_wtg_response_steady_state.txt"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li>A template for this file can be downloaded <a class="reference download internal" href="_downloads/template_YYYYMMDD_wtg_response_steady_state.txt" download=""><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYYYMMDD&gt;</span></code> is the file submission date</li>
 <li>File shall have three columns: variable name, variable value, variable unit</li>
 <li>Requested variables are the same as those requested for the time-stepping tools, and their value set to NaN when model cannot simulate them</li>
 </ul>
@@ -195,7 +207,7 @@ For additional quantities of interest, the simulated values are compared to the 
 <p><strong>Code-to-Measurements Comparison</strong></p>
 <blockquote>
 <div><em>The objective of the second step of the blind comparison is to provide a first assessment of the skill of the simulation tool.</em></div></blockquote>
-<p>In both parts of this phase, participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis. Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
+<p>In both parts of this phase, participants are requested to submit their results for as many of the requested quantities as possible, according to the level of fidelity of their simulation tool. Publicly released python notebooks will show the analysis method used to compute diagnostics from the submitted results. This process is done to ensure consistency of the methodology across groups, and to guarantee repeatability of the analysis. Participants are asked to submit the simulation setup information as well as the simulation results listed below.</p>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Simulation setup:</dt>
@@ -227,9 +239,9 @@ For additional quantities of interest, the simulated values are compared to the 
 <dt>Description of updates to the simulation</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYMMDD&gt;_updates.txt</span></code></dt>
+<dt>Upload a single file named <code class="docutils literal notranslate"><span class="pre">&lt;participant_id&gt;_&lt;YYYYMMDD&gt;_updates.txt</span></code></dt>
 <dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;YYMMDD&gt;</span></code> is the file submission date</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;YYYYMMDD&gt;</span></code> is the file submission date</li>
 <li>File contents clearly identify what was changed from the previous submission to the current, and why the changes were made</li>
 <li>File can be freely formatted by participants</li>
 </ul>
@@ -246,7 +258,6 @@ For additional quantities of interest, the simulated values are compared to the 
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -300,14 +311,6 @@ For additional quantities of interest, the simulated values are compared to the 
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
         </div>
       </div>
       <div class="clearer"></div>
@@ -316,8 +319,8 @@ For additional quantities of interest, the simulated values are compared to the 
       &copy;2018, Paula Doubrawa.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="_sources/simulations.rst.txt"
