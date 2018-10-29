@@ -12,9 +12,9 @@ Inflow conditions are obtained from a meteorological tower located upstream of t
 - Sonic anemometers at 10 m, 18 m, 32 m, 45 m, and 58 m above the ground
 - Cup anemometers at 18 m, 31.5 m, and 45 m above the ground
 - Wind vane at 29.5 m above the ground
-- Two barometric pressure sensors at 2 m and 27.5 m above the ground
-- Three relative humidity sensors at 2 m, 27.5 m, and 56.5 m above the ground
-- Three air temperature sensors at 2 m, 27.5 m, and 56.5 m above the ground
+- Two barometric pressure sensors at 2.5 m and 30 m above the ground
+- Three relative humidity sensors at 2.5 m, 30 m, and 56.5 m above the ground
+- Three air temperature sensors at 2.5 m, 30 m, and 56.5 m above the ground
 
 Several quantities are diagnosed from these measurements. These quantities are computed for each individual 10-minute period. The values provided in each benchmark as inflow conditions are ensemble averages that consider all of the 10-minute periods used to define the benchmark.
 

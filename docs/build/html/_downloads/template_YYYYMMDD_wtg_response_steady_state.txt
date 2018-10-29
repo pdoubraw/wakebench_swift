@@ -1,0 +1,14 @@
+# string = <participant_id>
+# <YYMMDD>
+#
+# Rotor_Speed [rpm] : wind-turbine rotor speed
+# Power [W]         : generator power
+# Torque [N m]      : generator torque
+# Pitch [deg]       : pitch angle of one blade
+# My [N m]          : out-of-plane moment at root of one blade
+#
+rotor_speed,-999.0,rpm
+power,-999.0,W
+torque,-999.0,Nm
+pitch,-999.0,deg
+moment,NaN,Nm

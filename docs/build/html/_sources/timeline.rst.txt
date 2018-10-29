@@ -3,11 +3,11 @@
 Timeline
 ========
 
+The dates below are tentative. Invites will be sent out prior to each meeting, confirming the dates below and informing the time and location.
+
 +-----------------------+---------------------------------------------------------------------------------------+
 | Date                  | Milestone                                                                             |
 +=======================+=======================================================================================+
-| October 22, 2018      | Release of data necessary to kick-off all benchmarks                                  |
-+-----------------------+---------------------------------------------------------------------------------------+
 | October 29, 2018      | SWiFT Benchmarks Web-Meeting (Kick-Off, #1)                                           |
 +-----------------------+---------------------------------------------------------------------------------------+
 | December 5, 2018      | SWiFT Benchmarks Web-Meeting (#2)                                                     |
